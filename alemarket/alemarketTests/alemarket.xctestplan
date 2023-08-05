@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "28ECE293-8ADF-47C4-A34A-536152C10424",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:alemarket.xcodeproj",
+      "identifier" : "F32976222A79D9F200647218",
+      "name" : "alemarket"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:alemarket.xcodeproj",
+        "identifier" : "F32976322A79D9F400647218",
+        "name" : "alemarketTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:alemarket.xcodeproj",
+        "identifier" : "F329763C2A79D9F400647218",
+        "name" : "alemarketUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
