@@ -29,7 +29,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:alemarket.xctestplan"
+            reference = "container:alemarketTests/alemarket.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
