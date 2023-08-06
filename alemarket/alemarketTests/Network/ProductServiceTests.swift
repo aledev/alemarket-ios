@@ -42,7 +42,7 @@ final class ProductServiceTests: XCTestCase {
     }
     
     func testFindProductsByQueryWithInvalidURLErrorResponse() async {
-        let expected = NSLocalizedString(NetworkError.invalidURL.errorKey, comment: "")
+        let expected = NetworkError.invalidURL.errorMessage
         mockNetworkManager.data = nil
         mockNetworkManager.error = NetworkError.invalidURL
         
@@ -57,7 +57,7 @@ final class ProductServiceTests: XCTestCase {
     }
     
     func testFindProductsByQueryWithDecodingErrorResponse() async {
-        let expected = NSLocalizedString(NetworkError.decodingError.errorKey, comment: "")
+        let expected = NetworkError.decodingError.errorMessage
         mockNetworkManager.data = nil
         mockNetworkManager.error = NetworkError.decodingError
         
@@ -72,7 +72,7 @@ final class ProductServiceTests: XCTestCase {
     }
     
     func testFindProductsByQueryWithInvalidServerResponseErrorResponse() async {
-        let expected = NSLocalizedString(NetworkError.invalidServerResponse.errorKey, comment: "")
+        let expected = NetworkError.invalidServerResponse.errorMessage
         mockNetworkManager.data = nil
         mockNetworkManager.error = NetworkError.invalidServerResponse
         
@@ -87,7 +87,7 @@ final class ProductServiceTests: XCTestCase {
     }
     
     func testFindProductsByQueryWithRequestErrorResponse() async {
-        let expected = NSLocalizedString(NetworkError.requestError.errorKey, comment: "")
+        let expected = NetworkError.requestError.errorMessage
         mockNetworkManager.data = nil
         mockNetworkManager.error = NetworkError.requestError
         
