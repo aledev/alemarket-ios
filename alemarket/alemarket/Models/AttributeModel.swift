@@ -30,4 +30,41 @@ struct AttributeModel: Codable {
     }
 }
 
+// MARK: - Equatable Implementation
+extension AttributeModel: Equatable {
+    
+    static func == (lhs: AttributeModel, rhs: AttributeModel) -> Bool {
+        lhs.id == rhs.id &&
+        lhs.name == rhs.name &&
+        lhs.valueId == rhs.valueId &&
+        lhs.valueName == rhs.valueName &&
+        lhs.attributeGroupId == rhs.attributeGroupId &&
+        lhs.attributeGroupName == rhs.attributeGroupName &&
+        lhs.valueStruct == rhs.valueStruct &&
+        lhs.values == rhs.values &&
+        lhs.source == rhs.source &&
+        lhs.valueType == rhs.valueType
+    }
+    
+}
+
+// MARK: - Default Value
+extension AttributeModel {
+    
+    static var `default`: AttributeModel {
+        AttributeModel(
+            id: "id123",
+            name: "name123",
+            valueId: "valueId123",
+            valueName: "valueName123",
+            attributeGroupId: "attributeGroupId123",
+            attributeGroupName: "atributeGroupName123",
+            valueStruct: ValueStructModel.default,
+            values: [ValueModel.default],
+            source: 123,
+            valueType: "valueType123"
+        )
+    }
+    
+}
 

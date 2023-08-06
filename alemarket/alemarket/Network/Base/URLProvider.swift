@@ -13,6 +13,6 @@ protocol BaseURLProvider {
 
 struct ProdURLProvider: BaseURLProvider {
     var apiBaseURL: URL {
-        URL(string: "https://api.mercadolibre.com/sites/MLA")!
+        URL(string: "https://api.mercadolibre.com/sites/MLA/")!
     }
 }

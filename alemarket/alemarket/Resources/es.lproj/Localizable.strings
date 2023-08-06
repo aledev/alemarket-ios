@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings: English
+  alemarket
+
+  Created by Alejandro Aliaga on 8/6/23.
+  
+*/
+
+/* NetworkError Strings */
+"INVALID_URL" = "The URL wasn't correct. Please try again.";
+"REQUEST_ERROR" = "There was an error while the app was doing the request. Please try again.";
+"INVALID_SERVER_RESPONSE" = "The server response wasn't correct. Please try again.";
+"DECODING_ERROR" = "There was an error while the app was processing the response. Please try again";
+
+/* LoadingView Strings */
+"LOADING_TEXT" = "Loading...";
+
+/* SearchView Strings */
+"SEARCH_PLACEHOLDER" = "What are you looking for? (Ex: iPhone 12 Pro Max)";

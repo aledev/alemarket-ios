@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct alemarketApp: App {
+    // MARK: - Properties
+    @StateObject var productListViewModel = ProductListViewModel(
+        productService: ProductService(
+            networkManager: NetworkManager(
+                urlProvider: ProdURLProvider()
+            )
+        ))
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ProductListView()
+                .environmentObject(productListViewModel)
         }
     }
 }

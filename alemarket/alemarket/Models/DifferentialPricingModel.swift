@@ -14,3 +14,21 @@ struct DifferentialPricingModel: Codable {
         case id
     }
 }
+
+// MARK: - Equatable Implementation
+extension DifferentialPricingModel: Equatable {
+    
+    static func == (lhs: DifferentialPricingModel, rhs: DifferentialPricingModel) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+}
+
+// MARK: - Default Value
+extension DifferentialPricingModel {
+    
+    static var `default`: DifferentialPricingModel {
+        DifferentialPricingModel(id: 123)
+    }
+    
+}

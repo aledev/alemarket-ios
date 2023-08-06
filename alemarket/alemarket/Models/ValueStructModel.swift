@@ -15,3 +15,26 @@ struct ValueStructModel: Codable {
         case number, unit
     }
 }
+
+// MARK: - Equatable Implementation
+extension ValueStructModel: Equatable {
+    
+    static func == (lhs: ValueStructModel, rhs: ValueStructModel) -> Bool {
+        lhs.number == rhs.number &&
+        lhs.unit == rhs.unit
+    }
+    
+}
+
+
+// MARK: - Default Value
+extension ValueStructModel {
+    
+    static var `default`: ValueStructModel {
+        ValueStructModel(
+            number: 123.12,
+            unit: "unit123"
+        )
+    }
+    
+}

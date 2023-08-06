@@ -20,3 +20,29 @@ struct AddressModel: Codable {
         case cityName = "city_name"
     }
 }
+
+// MARK: - Equatable Implementation
+extension AddressModel: Equatable {
+    
+    static func == (lhs: AddressModel, rhs: AddressModel) -> Bool {
+        lhs.stateId == rhs.stateId &&
+        lhs.stateName == rhs.stateName &&
+        lhs.cityId == rhs.cityId &&
+        lhs.cityName == rhs.cityName
+    }
+    
+}
+
+// MARK: - Default Value
+extension AddressModel {
+    
+    static var `default`: AddressModel {
+        AddressModel(
+            stateId: "stateId123",
+            stateName: "stateName123",
+            cityId: "cityId123",
+            cityName: "cityName123"
+        )
+    }
+    
+}

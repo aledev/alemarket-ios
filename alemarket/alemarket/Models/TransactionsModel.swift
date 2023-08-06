@@ -18,3 +18,31 @@ struct TransactionsModel: Codable {
         case canceled, completed, period, ratings, total
     }
 }
+
+// MARK: - Equatable Implementation
+extension TransactionsModel: Equatable {
+    
+    static func == (lhs: TransactionsModel, rhs: TransactionsModel) -> Bool {
+        lhs.canceled == rhs.canceled &&
+        lhs.completed == rhs.completed &&
+        lhs.period == rhs.period &&
+        lhs.ratings == rhs.ratings &&
+        lhs.total == rhs.total
+    }
+    
+}
+
+// MARK: - Default Value
+extension TransactionsModel {
+    
+    static var `default`: TransactionsModel {
+        TransactionsModel(
+            canceled: 123,
+            completed: 123,
+            period: "period123",
+            ratings: RatingsModel.default,
+            total: 123
+        )
+    }
+    
+}
