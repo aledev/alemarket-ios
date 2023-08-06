@@ -34,6 +34,7 @@
 		F307ADFD2A7EFD7100A198CC /* alemarket-es.strings in Resources */ = {isa = PBXBuildFile; fileRef = F307ADFF2A7EFD7100A198CC /* alemarket-es.strings */; };
 		F307AE022A7EFD9D00A198CC /* alemarket-en.strings in Resources */ = {isa = PBXBuildFile; fileRef = F307AE042A7EFD9D00A198CC /* alemarket-en.strings */; };
 		F307AE062A7F05B000A198CC /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F307AE052A7F05B000A198CC /* ApiResult.swift */; };
+		F307AE1B2A7F1D0500A198CC /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F307AE1A2A7F1D0500A198CC /* ProductListViewModel.swift */; };
 		F32976272A79D9F200647218 /* alemarketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32976262A79D9F200647218 /* alemarketApp.swift */; };
 		F32976292A79D9F200647218 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32976282A79D9F200647218 /* ContentView.swift */; };
 		F329762B2A79D9F400647218 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F329762A2A79D9F400647218 /* Assets.xcassets */; };
@@ -102,6 +103,7 @@
 		F307ADFE2A7EFD7100A198CC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = "es.lproj/alemarket-es.strings"; sourceTree = "<group>"; };
 		F307AE032A7EFD9D00A198CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/alemarket-en.strings"; sourceTree = "<group>"; };
 		F307AE052A7F05B000A198CC /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
+		F307AE1A2A7F1D0500A198CC /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
 		F32976232A79D9F200647218 /* alemarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alemarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F32976262A79D9F200647218 /* alemarketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alemarketApp.swift; sourceTree = "<group>"; };
 		F32976282A79D9F200647218 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 		F32976512A79DD1900647218 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				F307AE1A2A7F1D0500A198CC /* ProductListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				F307ADE82A7EACB500A198CC /* BaseAddressModel.swift in Sources */,
 				F307ADDE2A7EAB0900A198CC /* TransactionsModel.swift in Sources */,
 				F32976692A7C631F00647218 /* URLSession+Extension.swift in Sources */,
+				F307AE1B2A7F1D0500A198CC /* ProductListViewModel.swift in Sources */,
 				F32976582A79DF0500647218 /* URL+Extension.swift in Sources */,
 				F307ADCA2A7DBD9300A198CC /* PagingModel.swift in Sources */,
 				F329766E2A7C725600647218 /* ProductServiceProvider.swift in Sources */,
