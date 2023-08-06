@@ -30,3 +30,39 @@ struct EshopModel: Codable {
         case eshopLogoUrl = "eshop_logo_url"
     }
 }
+
+// MARK: - Equatable Implementation
+extension EshopModel: Equatable {
+    
+    static func == (lhs: EshopModel, rhs: EshopModel) -> Bool {
+        lhs.eshopId == rhs.eshopId &&
+        lhs.eshopExperience == rhs.eshopExperience &&
+        lhs.eshopLocations == rhs.eshopLocations &&
+        lhs.eshopLogoUrl == rhs.eshopLogoUrl &&
+        lhs.eshopRubro == rhs.eshopRubro &&
+        lhs.eshopStatusId == rhs.eshopStatusId &&
+        lhs.nickName == rhs.nickName &&
+        lhs.seller == rhs.seller &&
+        lhs.siteId == rhs.siteId
+    }
+    
+}
+
+// MARK: - Default Value
+extension EshopModel {
+    
+    static var `default`: EshopModel {
+        EshopModel(
+            eshopId: 123,
+            seller: 123,
+            nickName: "nickName123",
+            eshopStatusId: 123,
+            siteId: "siteId123",
+            eshopExperience: 123,
+            eshopRubro: "eshopRubro123",
+            eshopLocations: ["eshopLocations1", "eshopLocations1"],
+            eshopLogoUrl: "eshopLogoUrl123"
+        )
+    }
+    
+}

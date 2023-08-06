@@ -18,3 +18,29 @@ struct InstallmentsModel: Codable {
         case currencyId = "currency_id"
     }
 }
+
+// MARK: - Equatable Implementation
+extension InstallmentsModel: Equatable {
+    
+    static func == (lhs: InstallmentsModel, rhs: InstallmentsModel) -> Bool {
+        lhs.quantity == rhs.quantity &&
+        lhs.amount == rhs.amount &&
+        lhs.rate == rhs.rate &&
+        lhs.currencyId == rhs.currencyId
+    }
+    
+}
+
+// MARK: - Default Value
+extension InstallmentsModel {
+    
+    static var `default`: InstallmentsModel {
+        InstallmentsModel(
+            quantity: 123,
+            amount: 123.12,
+            rate: 123.12,
+            currencyId: "currencyId123"
+        )
+    }
+    
+}

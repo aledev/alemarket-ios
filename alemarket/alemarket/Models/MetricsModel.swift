@@ -19,6 +19,32 @@ struct MetricsModel: Codable {
     }
 }
 
+// MARK: - Equatable Implementation
+extension MetricsModel: Equatable {
+    
+    static func == (lhs: MetricsModel, rhs: MetricsModel) -> Bool {
+        lhs.sales == rhs.sales &&
+        lhs.claims == rhs.claims &&
+        lhs.delayedHandlingTime == rhs.delayedHandlingTime &&
+        lhs.cancellations == rhs.cancellations
+    }
+    
+}
+
+
+// MARK: - Default Value
+extension MetricsModel {
+    
+    static var `default`: MetricsModel {
+        MetricsModel(
+            sales: SalesModel.default,
+            claims: PeriodMetricsModel.default,
+            delayedHandlingTime: PeriodMetricsModel.default,
+            cancellations: PeriodMetricsModel.default
+        )
+    }
+    
+}
 
 
 

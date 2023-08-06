@@ -18,3 +18,29 @@ struct ValueModel: Codable {
         case valueStruct = "struct"
     }
 }
+
+// MARK: - Equatable Implementation
+extension ValueModel: Equatable {
+    
+    static func == (lhs: ValueModel, rhs: ValueModel) -> Bool {
+        lhs.id == rhs.id &&
+        lhs.name == rhs.name &&
+        lhs.valueStruct == rhs.valueStruct &&
+        lhs.source == rhs.source
+    }
+    
+}
+
+// MARK: - Default Value
+extension ValueModel {
+    
+    static var `default`: ValueModel {
+        ValueModel(
+            id: "id123",
+            name: "name123",
+            valueStruct: ValueStructModel.default,
+            source: 123
+        )
+    }
+    
+}

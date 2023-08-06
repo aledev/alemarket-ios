@@ -12,6 +12,19 @@ enum NetworkError: Error {
     case requestError
     case invalidServerResponse
     case decodingError
+    
+    var errorKey: String {
+        switch self {
+        case .invalidURL:
+            return "INVALID_URL"
+        case .requestError:
+            return "REQUEST_ERROR"
+        case .invalidServerResponse:
+            return "INVALID_SERVER_RESPONSE"
+        case .decodingError:
+            return "DECODING_ERROR"
+        }
+    }
 }
 
 protocol NetworkManagerProtocol {

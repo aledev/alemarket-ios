@@ -16,3 +16,25 @@ struct ExcludedModel: Codable {
         case realRate = "real_rate"
     }
 }
+
+// MARK: - Equatable Implementation
+extension ExcludedModel: Equatable {
+    
+    static func == (lhs: ExcludedModel, rhs: ExcludedModel) -> Bool {
+        lhs.realValue == rhs.realValue &&
+        lhs.realRate == rhs.realRate
+    }
+    
+}
+
+// MARK: - Default Value
+extension ExcludedModel {
+    
+    static var `default`: ExcludedModel {
+        ExcludedModel(
+            realValue: 123,
+            realRate: 123.123
+        )
+    }
+    
+}

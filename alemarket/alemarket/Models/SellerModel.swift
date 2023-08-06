@@ -28,3 +28,42 @@ struct SellerModel: Codable {
         case sellerReputation = "seller_reputation"
     }
 }
+
+// MARK: - Equatable Implementation
+extension SellerModel: Equatable {
+    
+    static func == (lhs: SellerModel, rhs: SellerModel) -> Bool {
+        lhs.id == rhs.id &&
+        lhs.nickname == rhs.nickname &&
+        lhs.carDealer == rhs.carDealer &&
+        lhs.realEstateAgency == rhs.realEstateAgency &&
+        lhs.registrationDate == rhs.registrationDate &&
+        lhs.tags == rhs.tags &&
+        lhs.carDealerLogo == rhs.carDealerLogo &&
+        lhs.permalink == rhs.permalink &&
+        lhs.sellerReputation == rhs.sellerReputation &&
+        lhs.eshop == rhs.eshop
+    }
+    
+}
+
+
+// MARK: - Default Value
+extension SellerModel {
+    
+    static var `default`: SellerModel {
+        SellerModel(
+            id: 123,
+            nickname: "nickname123",
+            carDealer: true,
+            realEstateAgency: true,
+            registrationDate: "registrationDate123",
+            tags: ["tag1", "tag2"],
+            carDealerLogo: "carDealerLogo123",
+            permalink: "permalink123",
+            sellerReputation: SellerReputationModel.default,
+            eshop: EshopModel.default
+        )
+    }
+    
+}

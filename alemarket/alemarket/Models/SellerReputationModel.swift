@@ -19,3 +19,29 @@ struct SellerReputationModel: Codable {
         case powerSellerStatus = "power_seller_status"        
     }
 }
+
+// MARK: - Equatable Implementation
+extension SellerReputationModel: Equatable {
+    
+    static func == (lhs: SellerReputationModel, rhs: SellerReputationModel) -> Bool {
+        lhs.levelId == rhs.levelId &&
+        lhs.powerSellerStatus == rhs.powerSellerStatus &&
+        lhs.transactions == rhs.transactions &&
+        lhs.metrics == rhs.metrics
+    }
+    
+}
+
+// MARK: - Default Value
+extension SellerReputationModel {
+    
+    static var `default`: SellerReputationModel {
+        SellerReputationModel(
+            levelId: "levelId123",
+            powerSellerStatus: "powerSellerStatus123",
+            transactions: TransactionsModel.default,
+            metrics: MetricsModel.default
+        )
+    }
+    
+}

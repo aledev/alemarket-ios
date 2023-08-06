@@ -16,3 +16,27 @@ struct RatingsModel: Codable {
         case negative, neutral, positive
     }
 }
+
+// MARK: - Equatable Implementation
+extension RatingsModel: Equatable {
+    
+    static func == (lhs: RatingsModel, rhs: RatingsModel) -> Bool {
+        lhs.negative == rhs.negative &&
+        lhs.neutral == rhs.neutral &&
+        lhs.positive == rhs.positive
+    }
+    
+}
+
+// MARK: - Default Value
+extension RatingsModel {
+    
+    static var `default`: RatingsModel {
+        RatingsModel(
+            negative: 123,
+            neutral: 123,
+            positive: 123
+        )
+    }
+    
+}

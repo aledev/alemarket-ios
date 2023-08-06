@@ -78,3 +78,99 @@ struct ProductModel: Codable {
         case inventoryId = "inventory_id"
     }
 }
+
+// MARK: - Equatable Implementation
+extension ProductModel: Equatable {
+    
+    static func == (lhs: ProductModel, rhs: ProductModel) -> Bool {
+        lhs.id == rhs.id &&
+        lhs.title == rhs.title &&
+        lhs.condition == rhs.condition &&
+        lhs.thumbnailId == rhs.thumbnailId &&
+        lhs.catalogProductId == rhs.catalogProductId &&
+        lhs.listingTypeId == rhs.listingTypeId &&
+        lhs.permalink == rhs.permalink &&
+        lhs.buyingMode == rhs.buyingMode &&
+        lhs.siteId == rhs.siteId &&
+        lhs.categoryId == rhs.categoryId &&
+        lhs.domainId == rhs.domainId &&
+        lhs.variationId == rhs.variationId &&
+        lhs.thumbnail == rhs.thumbnail &&
+        lhs.currencyId == rhs.currencyId &&
+        lhs.orderBackend == rhs.orderBackend &&
+        lhs.price == rhs.price &&
+        lhs.originalPrice == rhs.originalPrice &&
+        lhs.salePrice == rhs.salePrice &&
+        lhs.soldQuantity == rhs.soldQuantity &&
+        lhs.availableQuantity == rhs.availableQuantity &&
+        lhs.officialStoreId == rhs.officialStoreId &&
+        lhs.useThumbnailId == rhs.useThumbnailId &&
+        lhs.acceptsMercadopago == rhs.acceptsMercadopago &&
+        lhs.tags == rhs.tags &&
+        lhs.variationFilters == rhs.variationFilters &&
+        lhs.shipping == rhs.shipping &&
+        lhs.stopTime == rhs.stopTime &&
+        lhs.seller == rhs.seller &&
+        lhs.sellerAddress == rhs.sellerAddress &&
+        lhs.address == rhs.address &&
+        lhs.attributes == rhs.attributes &&
+        lhs.variationsData == rhs.variationsData &&
+        lhs.installments == rhs.installments &&
+        lhs.winnerItemId == rhs.winnerItemId &&
+        lhs.catalogListing == rhs.catalogListing &&
+        lhs.discounts == rhs.discounts &&
+        lhs.promotions == rhs.promotions &&
+        lhs.differentialPricing == rhs.differentialPricing &&
+        lhs.inventoryId == rhs.inventoryId
+    }
+    
+}
+
+// MARK: - Default Value
+extension ProductModel {
+    
+    static var `default`: ProductModel {
+        ProductModel(
+            id: "id123",
+            title: "title123",
+            condition: "condition123",
+            thumbnailId: "thumbnailId123",
+            catalogProductId: "catalogProductId123",
+            listingTypeId: "listingTypeId123",
+            permalink: "permalink123",
+            buyingMode: "buyingMode123",
+            siteId: "siteId123",
+            categoryId: "categoryId123",
+            domainId: "domainId123",
+            variationId: "variationId123",
+            thumbnail: "thumbnail123",
+            currencyId: "currencyId123",
+            orderBackend: 123,
+            price: 123,
+            originalPrice: 123,
+            salePrice: 123,
+            soldQuantity: 123,
+            availableQuantity: 123,
+            officialStoreId: 123,
+            useThumbnailId: true,
+            acceptsMercadopago: true,
+            tags: ["tag1", "tag2"],
+            variationFilters: ["filter1", "filter2"],
+            shipping: ShippingModel.default,
+            stopTime: "stopTime123",
+            seller: SellerModel.default,
+            sellerAddress: SellerAddressModel.default,
+            address: AddressModel.default,
+            attributes: [AttributeModel.default],
+            variationsData: ["variation1": VariationDataModel.default],
+            installments: InstallmentsModel.default,
+            winnerItemId: "winnerItemId123",
+            catalogListing: true,
+            discounts: "discounts123",
+            promotions: ["promotion1", "promotion2"],
+            differentialPricing: DifferentialPricingModel.default,
+            inventoryId: "inventoryId123"
+        )        
+    }
+    
+}
