@@ -13,16 +13,16 @@ enum NetworkError: Error {
     case invalidServerResponse
     case decodingError
     
-    var errorKey: String {
+    var errorMessage: String {
         switch self {
         case .invalidURL:
-            return "INVALID_URL"
+            return AppStringValue.invalidURL
         case .requestError:
-            return "REQUEST_ERROR"
+            return AppStringValue.requestError
         case .invalidServerResponse:
-            return "INVALID_SERVER_RESPONSE"
+            return AppStringValue.invalidServerResponse
         case .decodingError:
-            return "DECODING_ERROR"
+            return AppStringValue.decodingError
         }
     }
 }

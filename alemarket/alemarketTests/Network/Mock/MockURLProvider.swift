@@ -10,6 +10,6 @@ import Foundation
 
 class MockURLProvider: BaseURLProvider {
     var apiBaseURL: URL {
-        URL(string: "https://mock.api.mercadolibre.com")!
+        URL(string: "https://mock.api.mercadolibre.com/")!
     }    
 }

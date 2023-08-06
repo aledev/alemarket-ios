@@ -19,16 +19,12 @@ protocol ProductListViewModelProtocol: ObservableObject {
 class ProductListViewModel: ProductListViewModelProtocol {
     // MARK: - Properties
     @Published var result: ApiResult<SearchResultModel>?
-    @Published var loading: Bool
+    @Published var loading: Bool = false
     let productService: ProductServiceProvider
     
     // MARK: - Initializer
-    init(productService: ProductServiceProvider,
-         result: ApiResult<SearchResultModel>? = nil,
-         loading: Bool) {
-        self.productService = productService
-        self.result = result
-        self.loading = loading
+    init(productService: ProductServiceProvider) {
+        self.productService = productService        
     }
  
     // MARK: - Public Functions

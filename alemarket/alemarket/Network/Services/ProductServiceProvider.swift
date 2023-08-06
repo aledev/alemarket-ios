@@ -22,7 +22,7 @@ class ProductService: ProductServiceProvider {
     }
     
     // MARK: - Public Functions
-    func findProductsByQuery(query: String) async -> ApiResult<SearchResultModel> {
+    func findProductsByQuery(query: String) async -> ApiResult<SearchResultModel> {        
         let result: SearchResult = await networkManager.loadData(endpoint: .productList(query))
         
         switch result {
@@ -30,8 +30,7 @@ class ProductService: ProductServiceProvider {
             return .response(data)
         case .failure(let error):
             // TODO: Add Logging
-            let description = NSLocalizedString(error.errorKey, comment: "")
-            return .error(description)
+            return .error(error.errorMessage)
         }
     }
 }

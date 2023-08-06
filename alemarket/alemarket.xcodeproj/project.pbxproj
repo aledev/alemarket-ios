@@ -31,10 +31,14 @@
 		F307ADF42A7EDD3200A198CC /* DifferentialPricingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F307ADF32A7EDD3200A198CC /* DifferentialPricingModel.swift */; };
 		F307ADF62A7EE45400A198CC /* EshopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F307ADF52A7EE45400A198CC /* EshopModel.swift */; };
 		F307ADF92A7EFA2D00A198CC /* ProductServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F307ADF82A7EFA2D00A198CC /* ProductServiceTests.swift */; };
-		F307ADFD2A7EFD7100A198CC /* alemarket-es.strings in Resources */ = {isa = PBXBuildFile; fileRef = F307ADFF2A7EFD7100A198CC /* alemarket-es.strings */; };
-		F307AE022A7EFD9D00A198CC /* alemarket-en.strings in Resources */ = {isa = PBXBuildFile; fileRef = F307AE042A7EFD9D00A198CC /* alemarket-en.strings */; };
 		F307AE062A7F05B000A198CC /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F307AE052A7F05B000A198CC /* ApiResult.swift */; };
 		F307AE1B2A7F1D0500A198CC /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F307AE1A2A7F1D0500A198CC /* ProductListViewModel.swift */; };
+		F307AE1E2A7FC4A100A198CC /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F307AE1D2A7FC4A100A198CC /* ProductListView.swift */; };
+		F307AE202A7FCFDB00A198CC /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F307AE1F2A7FCFDB00A198CC /* SearchView.swift */; };
+		F307AE232A7FD10300A198CC /* AppStringKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F307AE222A7FD10300A198CC /* AppStringKeys.swift */; };
+		F307AE262A7FD7F300A198CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F307AE282A7FD7F300A198CC /* Localizable.strings */; };
+		F307AE2B2A7FD82400A198CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F307AE2D2A7FD82400A198CC /* Localizable.strings */; };
+		F307AE342A7FDB2C00A198CC /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F307AE332A7FDB2C00A198CC /* LoadingView.swift */; };
 		F32976272A79D9F200647218 /* alemarketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32976262A79D9F200647218 /* alemarketApp.swift */; };
 		F32976292A79D9F200647218 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32976282A79D9F200647218 /* ContentView.swift */; };
 		F329762B2A79D9F400647218 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F329762A2A79D9F400647218 /* Assets.xcassets */; };
@@ -100,10 +104,14 @@
 		F307ADF52A7EE45400A198CC /* EshopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EshopModel.swift; sourceTree = "<group>"; };
 		F307ADF72A7EECC200A198CC /* alemarket.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = alemarket.xctestplan; sourceTree = "<group>"; };
 		F307ADF82A7EFA2D00A198CC /* ProductServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductServiceTests.swift; sourceTree = "<group>"; };
-		F307ADFE2A7EFD7100A198CC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = "es.lproj/alemarket-es.strings"; sourceTree = "<group>"; };
-		F307AE032A7EFD9D00A198CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/alemarket-en.strings"; sourceTree = "<group>"; };
 		F307AE052A7F05B000A198CC /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
 		F307AE1A2A7F1D0500A198CC /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
+		F307AE1D2A7FC4A100A198CC /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
+		F307AE1F2A7FCFDB00A198CC /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		F307AE222A7FD10300A198CC /* AppStringKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStringKeys.swift; sourceTree = "<group>"; };
+		F307AE302A7FD8F600A198CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F307AE312A7FD8F600A198CC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F307AE332A7FDB2C00A198CC /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		F32976232A79D9F200647218 /* alemarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alemarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F32976262A79D9F200647218 /* alemarketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alemarketApp.swift; sourceTree = "<group>"; };
 		F32976282A79D9F200647218 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -175,10 +183,35 @@
 			isa = PBXGroup;
 			children = (
 				F329762A2A79D9F400647218 /* Assets.xcassets */,
-				F307AE042A7EFD9D00A198CC /* alemarket-en.strings */,
-				F307ADFF2A7EFD7100A198CC /* alemarket-es.strings */,
+				F307AE282A7FD7F300A198CC /* Localizable.strings */,
+				F307AE2D2A7FD82400A198CC /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F307AE1C2A7FC48400A198CC /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				F307AE1D2A7FC4A100A198CC /* ProductListView.swift */,
+				F307AE1F2A7FCFDB00A198CC /* SearchView.swift */,
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
+		F307AE212A7FD0E200A198CC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F307AE222A7FD10300A198CC /* AppStringKeys.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F307AE322A7FDB1D00A198CC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F307AE332A7FDB2C00A198CC /* LoadingView.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		F329761A2A79D9F200647218 = {
@@ -205,8 +238,9 @@
 			isa = PBXGroup;
 			children = (
 				F329765B2A79EFBD00647218 /* App */,
-				F307ADFA2A7EFBAC00A198CC /* Resources */,
 				F32976542A79DDE500647218 /* Extensions */,
+				F307ADFA2A7EFBAC00A198CC /* Resources */,
+				F307AE212A7FD0E200A198CC /* Utils */,
 				F32976532A79DD2700647218 /* Network */,
 				F32976712A7C762500647218 /* Models */,
 				F32976512A79DD1900647218 /* ViewModels */,
@@ -246,6 +280,8 @@
 		F32976502A79DD1300647218 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F307AE322A7FDB1D00A198CC /* Common */,
+				F307AE1C2A7FC48400A198CC /* ProductList */,
 				F32976282A79D9F200647218 /* ContentView.swift */,
 			);
 			path = Views;
@@ -460,9 +496,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F307ADFD2A7EFD7100A198CC /* alemarket-es.strings in Resources */,
+				F307AE262A7FD7F300A198CC /* Localizable.strings in Resources */,
+				F307AE2B2A7FD82400A198CC /* Localizable.strings in Resources */,
 				F329762E2A79D9F400647218 /* Preview Assets.xcassets in Resources */,
-				F307AE022A7EFD9D00A198CC /* alemarket-en.strings in Resources */,
 				F329762B2A79D9F400647218 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,17 +529,21 @@
 				F329765A2A79EF1000647218 /* Color+Extension.swift in Sources */,
 				F307AE062A7F05B000A198CC /* ApiResult.swift in Sources */,
 				F329765D2A79F6EA00647218 /* URLProvider.swift in Sources */,
+				F307AE342A7FDB2C00A198CC /* LoadingView.swift in Sources */,
 				F32976652A7C60DE00647218 /* NetworkManager.swift in Sources */,
 				F307ADD22A7DBEC800A198CC /* ValueModel.swift in Sources */,
 				F307ADD42A7EA9CE00A198CC /* SellerModel.swift in Sources */,
 				F307ADE82A7EACB500A198CC /* BaseAddressModel.swift in Sources */,
 				F307ADDE2A7EAB0900A198CC /* TransactionsModel.swift in Sources */,
+				F307AE202A7FCFDB00A198CC /* SearchView.swift in Sources */,
 				F32976692A7C631F00647218 /* URLSession+Extension.swift in Sources */,
 				F307AE1B2A7F1D0500A198CC /* ProductListViewModel.swift in Sources */,
 				F32976582A79DF0500647218 /* URL+Extension.swift in Sources */,
 				F307ADCA2A7DBD9300A198CC /* PagingModel.swift in Sources */,
+				F307AE1E2A7FC4A100A198CC /* ProductListView.swift in Sources */,
 				F329766E2A7C725600647218 /* ProductServiceProvider.swift in Sources */,
 				F32976732A7C766300647218 /* ProductModel.swift in Sources */,
+				F307AE232A7FD10300A198CC /* AppStringKeys.swift in Sources */,
 				F307ADE42A7EAB4200A198CC /* PeriodMetricsModel.swift in Sources */,
 				F307ADC62A7DBB9C00A198CC /* ShippingModel.swift in Sources */,
 				F32976562A79DE1400647218 /* ApiEndpoints.swift in Sources */,
@@ -565,20 +605,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F307ADFF2A7EFD7100A198CC /* alemarket-es.strings */ = {
+		F307AE282A7FD7F300A198CC /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F307ADFE2A7EFD7100A198CC /* es */,
+				F307AE312A7FD8F600A198CC /* es */,
 			);
-			name = "alemarket-es.strings";
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		F307AE042A7EFD9D00A198CC /* alemarket-en.strings */ = {
+		F307AE2D2A7FD82400A198CC /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F307AE032A7EFD9D00A198CC /* en */,
+				F307AE302A7FD8F600A198CC /* en */,
 			);
-			name = "alemarket-en.strings";
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

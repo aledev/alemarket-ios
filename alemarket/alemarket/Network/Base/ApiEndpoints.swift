@@ -14,7 +14,11 @@ enum ApiEndpoints {
     private var value: String {
         switch self {
         case .productList(let query):
-            return "search?q=\(query)"
+            guard let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+                fatalError("Something wrong happened while trying to url encode the query: \(query)")
+            }
+            
+            return "search?q=\(encodedQuery)"
         case .productDetail(let itemId):
             return "items/\(itemId)?include_attributes=all"
         }
