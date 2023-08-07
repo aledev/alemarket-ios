@@ -10,47 +10,63 @@ import Foundation
 struct ProductModel: Codable {
     let id: String
     let title: String
-    let condition: String
+    let condition: String?
     let thumbnailId: String
-    let catalogProductId: String
+    let catalogProductId: String?
     let listingTypeId: String
     let permalink: String
     let buyingMode: String
     let siteId: String
     let categoryId: String
     let domainId: String
-    let variationId: String
+    let variationId: String?
     let thumbnail: String
-    let currencyId: String
+    let currencyId: String?
     let orderBackend: Int?
-    let price: Int?
-    let originalPrice: Int?
-    let salePrice: Int?
+    let price: Double?
+    let originalPrice: Double?
+    let salePrice: Double?
     let soldQuantity: Int
     let availableQuantity: Int
     let officialStoreId: Int?
-    let useThumbnailId: Bool
+    let useThumbnailId: Bool?
     let acceptsMercadopago: Bool
     let tags: [String]
-    let variationFilters: [String]
+    let variationFilters: [String]?
     let shipping: ShippingModel
     let stopTime: String
-    let seller: SellerModel
+    let seller: SellerModel?
     let sellerAddress: SellerAddressModel
-    let address: AddressModel
+    let address: AddressModel?
     let attributes: [AttributeModel]
-    let variationsData: [String: VariationDataModel]
-    let installments: InstallmentsModel
+    let variationsData: [String: VariationDataModel]?
+    let installments: InstallmentsModel?
     let winnerItemId: String?
     let catalogListing: Bool
     let discounts: String?
-    let promotions: [String]
+    let promotions: [String]?
     let differentialPricing: DifferentialPricingModel?
     let inventoryId: String?
-
+    let pictures: [PictureModel]?
+    
+    // MARK: - Computed Properties
+    var thumbnailUrl: URL? {
+        URL(string: thumbnail.convertUrlToHttps)
+    }
+    
+    var formattedPrice: String {
+        guard let price = price else {
+            return ""
+        }
+        
+        return AppUtils.formatCurrency(value: price, currencyCode: currencyId)
+    }
+    
+    // MARK: - Coding Keys
     enum CodingKeys: String, CodingKey {
-        case id, title, condition, permalink, thumbnail, price, tags, seller,
-             address, attributes, shipping, installments, discounts, promotions        
+        case id, title, condition, permalink, thumbnail, price,
+             tags, seller, address, attributes, shipping, installments,
+             discounts, promotions, pictures
         case thumbnailId = "thumbnail_id"
         case catalogProductId = "catalog_product_id"
         case listingTypeId = "listing_type_id"
@@ -131,7 +147,7 @@ extension ProductModel {
     
     static var `default`: ProductModel {
         ProductModel(
-            id: "id123",
+            id: "MLA1306048322",
             title: "title123",
             condition: "condition123",
             thumbnailId: "thumbnailId123",
@@ -143,12 +159,12 @@ extension ProductModel {
             categoryId: "categoryId123",
             domainId: "domainId123",
             variationId: "variationId123",
-            thumbnail: "thumbnail123",
+            thumbnail: "https://http2.mlstatic.com/D_695065-MLA49737477253_042022-O.jpg",
             currencyId: "currencyId123",
             orderBackend: 123,
-            price: 123,
-            originalPrice: 123,
-            salePrice: 123,
+            price: 123.0,
+            originalPrice: 123.0,
+            salePrice: 123.0,
             soldQuantity: 123,
             availableQuantity: 123,
             officialStoreId: 123,
@@ -169,7 +185,8 @@ extension ProductModel {
             discounts: "discounts123",
             promotions: ["promotion1", "promotion2"],
             differentialPricing: DifferentialPricingModel.default,
-            inventoryId: "inventoryId123"
+            inventoryId: "inventoryId123",
+            pictures: nil
         )        
     }
     

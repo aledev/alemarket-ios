@@ -8,13 +8,15 @@
 import Foundation
 
 protocol ProductServiceProvider {
-    func findProductsByQuery(query: String) async -> ApiResult<SearchResultModel>
+    func findProductsByQuery(with query: String) async -> ApiResult<SearchResultModel>
+    func productDetailById(with itemId: String) async -> ApiResult<ProductModel>
 }
 
 class ProductService: ProductServiceProvider {
     // MARK: - Properties
     typealias SearchResult = Result<SearchResultModel, NetworkError>
-    let networkManager: NetworkManagerProtocol
+    typealias ProductResult = Result<ProductModel, NetworkError>
+    private let networkManager: NetworkManagerProtocol
     
     // MARK: - Initializer
     init(networkManager: NetworkManagerProtocol) {
@@ -22,14 +24,26 @@ class ProductService: ProductServiceProvider {
     }
     
     // MARK: - Public Functions
-    func findProductsByQuery(query: String) async -> ApiResult<SearchResultModel> {        
+    func findProductsByQuery(with query: String) async -> ApiResult<SearchResultModel> {
         let result: SearchResult = await networkManager.loadData(endpoint: .productList(query))
         
         switch result {
         case .success(let data):
             return .response(data)
         case .failure(let error):
-            // TODO: Add Logging
+            debugPrint("Error on the findProductsByQuery request. Detail: \(error)")
+            return .error(error.errorMessage)
+        }
+    }
+    
+    func productDetailById(with itemId: String) async -> ApiResult<ProductModel> {
+        let result: ProductResult = await networkManager.loadData(endpoint: .productDetail(itemId))
+        
+        switch result {
+        case .success(let data):
+            return .response(data)
+        case .failure(let error):
+            debugPrint("Error on the productDetailById request. Detail: \(error.errorMessage)")
             return .error(error.errorMessage)
         }
     }

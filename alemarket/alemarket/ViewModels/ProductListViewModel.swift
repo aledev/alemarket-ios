@@ -20,7 +20,7 @@ class ProductListViewModel: ProductListViewModelProtocol {
     // MARK: - Properties
     @Published var result: ApiResult<SearchResultModel>?
     @Published var loading: Bool = false
-    let productService: ProductServiceProvider
+    private let productService: ProductServiceProvider
     
     // MARK: - Initializer
     init(productService: ProductServiceProvider) {
@@ -32,6 +32,6 @@ class ProductListViewModel: ProductListViewModelProtocol {
         self.loading = true
         defer { self.loading = false }
         
-        self.result = await productService.findProductsByQuery(query: query)
+        self.result = await productService.findProductsByQuery(with: query)
     }
 }

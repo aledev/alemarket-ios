@@ -16,8 +16,8 @@ struct AttributeModel: Codable {
     let attributeGroupName: String
     let valueStruct: ValueStructModel?
     let values: [ValueModel]
-    let source: Int
-    let valueType: String
+    let source: Int?
+    let valueType: String?
 
     enum CodingKeys: String, CodingKey {
         case id, name, values, source

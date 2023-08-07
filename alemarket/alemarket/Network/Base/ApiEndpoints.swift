@@ -18,9 +18,9 @@ enum ApiEndpoints {
                 fatalError("Something wrong happened while trying to url encode the query: \(query)")
             }
             
-            return "search?q=\(encodedQuery)"
+            return "sites/MLA/search?q=\(encodedQuery)"
         case .productDetail(let itemId):
-            return "items/\(itemId)?include_attributes=all"
+            return "items/\(itemId)"
         }
     }
     

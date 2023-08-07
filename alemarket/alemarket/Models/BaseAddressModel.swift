@@ -8,7 +8,7 @@
 import Foundation
 
 struct BaseAddressModel: Codable {
-    let id: String
+    let id: String?
     let name: String
     
     enum CodingKeys: String, CodingKey {

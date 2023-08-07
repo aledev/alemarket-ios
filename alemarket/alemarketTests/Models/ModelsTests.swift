@@ -183,7 +183,6 @@ final class ModelsTests: XCTestCase {
             XCTAssertEqual(value.siteId, "")
             XCTAssertEqual(value.eshopExperience, 0)
             XCTAssertNil(value.eshopRubro)
-            XCTAssertNil(value.eshopLocations)
             XCTAssertEqual(value.eshopLogoUrl, "")
         } catch {
             XCTFail("Decoding failed: \(error)")
@@ -392,7 +391,6 @@ final class ModelsTests: XCTestCase {
             XCTAssertEqual(value.eshop?.siteId, "")
             XCTAssertEqual(value.eshop?.eshopExperience, 0)
             XCTAssertNil(value.eshop?.eshopRubro)
-            XCTAssertNil(value.eshop?.eshopLocations)
             XCTAssertEqual(value.eshop?.eshopLogoUrl, "")
         } catch {
             XCTFail("Decoding failed: \(error)")
@@ -475,12 +473,12 @@ final class ModelsTests: XCTestCase {
             XCTAssertNil(value.id)
             XCTAssertNil(value.latitude)
             XCTAssertNil(value.longitude)
-            XCTAssertEqual(value.country.id, "AR")
-            XCTAssertEqual(value.country.name, "Argentina")
-            XCTAssertEqual(value.state.id, "AR-X")
-            XCTAssertEqual(value.state.name, "Córdoba")
-            XCTAssertEqual(value.city.id, "TUxBQ0NBUGNiZGQx")
-            XCTAssertEqual(value.city.name, "Córdoba")
+            XCTAssertEqual(value.country?.id, "AR")
+            XCTAssertEqual(value.country?.name, "Argentina")
+            XCTAssertEqual(value.state?.id, "AR-X")
+            XCTAssertEqual(value.state?.name, "Córdoba")
+            XCTAssertEqual(value.city?.id, "TUxBQ0NBUGNiZGQx")
+            XCTAssertEqual(value.city?.name, "Córdoba")
         } catch {
             XCTFail("Decoding failed: \(error)")
         }

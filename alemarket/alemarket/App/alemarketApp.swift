@@ -15,12 +15,18 @@ struct alemarketApp: App {
             networkManager: NetworkManager(
                 urlProvider: ProdURLProvider()
             )
-        ))
+        )
+    )
     
+    // MARK: - Body
     var body: some Scene {
+        
         WindowGroup {
-            ProductListView()
+            
+            ProductSearchView()
                 .environmentObject(productListViewModel)
-        }
-    }
+            
+        } //: WindowGroup
+        
+    } //: Body
 }

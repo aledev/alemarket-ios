@@ -7,26 +7,6 @@
 
 import Foundation
 
-enum NetworkError: Error {
-    case invalidURL
-    case requestError
-    case invalidServerResponse
-    case decodingError
-    
-    var errorMessage: String {
-        switch self {
-        case .invalidURL:
-            return AppStringValue.invalidURL
-        case .requestError:
-            return AppStringValue.requestError
-        case .invalidServerResponse:
-            return AppStringValue.invalidServerResponse
-        case .decodingError:
-            return AppStringValue.decodingError
-        }
-    }
-}
-
 protocol NetworkManagerProtocol {
     func loadData<T: Decodable>(endpoint: ApiEndpoints) async -> Result<T, NetworkError>
 }
@@ -59,10 +39,13 @@ class NetworkManager: NetworkManagerProtocol {
             return .failure(.invalidServerResponse)
         }
         
-        guard let decodedData = try? JSONDecoder().decode(T.self, from: data) else {
+        do {
+            let decodedData = try JSONDecoder().decode(T.self, from: data)
+            return .success(decodedData)
+            
+        } catch {
+            debugPrint("Error while trying to decode the data. Error: \(error)")
             return .failure(.decodingError)
         }
-        
-        return .success(decodedData)
     }
 }

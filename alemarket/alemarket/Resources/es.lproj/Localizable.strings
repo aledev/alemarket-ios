@@ -17,3 +17,6 @@
 
 /* SearchView Strings */
 "SEARCH_PLACEHOLDER" = "What are you looking for? (Ex: iPhone 12 Pro Max)";
+"EMPTY_RESULT_TITLE" = "We didn't find any posts";
+"EMPTY_RESULT_BODY" = "Check that the word is spelled correctly. You can also try with fewer terms or more general ones.";
+"PAGING_RESULTS_TEXT" = "results";

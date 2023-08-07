@@ -11,7 +11,7 @@ struct InstallmentsModel: Codable {
     let quantity: Int
     let amount: Double
     let rate: Double
-    let currencyId: String
+    let currencyId: String?
 
     enum CodingKeys: String, CodingKey {
         case quantity, amount, rate

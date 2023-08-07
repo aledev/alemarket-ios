@@ -10,7 +10,7 @@ import Foundation
 struct ShippingModel: Codable {
     let storePickUp: Bool
     let freeShipping: Bool
-    let logisticType: String
+    let logisticType: String?
     let mode: String
     let tags: [String]
     let benefits: String?

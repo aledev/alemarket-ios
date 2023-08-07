@@ -9,12 +9,42 @@ import SwiftUI
 
 extension Color {
  
-    static var splashTextColor: Color {
-        Color("SplashTextColor")
+    // MARK: - Static Properties
+    static var loadingAccentColor: Color {
+        Color("LoadingAccentColor")
     }
     
-    static var backgroundColor: Color {
-        Color("BackgroundColor")
+    static var meliBackgroundColor: Color {
+        Color("MeliBackgroundColor")
+    }
+    
+    static var errorColor: Color {
+        Color("ErrorColor")
+    }
+    
+    static var systemBackgroundColor: Color {
+        Color(UIColor.systemBackground)
+    }
+    
+    static var secondarySystemBackgroundColor: Color {
+        Color(UIColor.secondarySystemBackground)
+    }
+    
+    static var systemGroupedBackgroundColor: Color {
+        Color(UIColor.systemGroupedBackground)
+    }
+    
+    static var secondarySystemGroupedBackgroundColor: Color {
+        Color(UIColor.secondarySystemGroupedBackground)
+    }
+    
+    // MARK: - Computed Properties
+    var uiColor: UIColor? {
+        guard let cgColor = self.cgColor else {
+            return nil
+        }
+        
+        return UIColor(cgColor: cgColor)
     }
     
 }

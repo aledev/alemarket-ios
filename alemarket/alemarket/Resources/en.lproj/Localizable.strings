@@ -17,3 +17,6 @@
 
 /* SearchView Strings */
 "SEARCH_PLACEHOLDER" = "¿Qué estás buscando? (Ej: iPhone 12 Pro Max)";
+"EMPTY_RESULT_TITLE" = "No encontramos publicaciones";
+"EMPTY_RESULT_BODY" = "Revisa que la palabra esté bien escrita. También puedes probar con menos términos o más generales.";
+"PAGING_RESULTS_TEXT" = "resultados";
