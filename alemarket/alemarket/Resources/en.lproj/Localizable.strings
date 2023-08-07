@@ -20,3 +20,6 @@
 "EMPTY_RESULT_TITLE" = "No encontramos publicaciones";
 "EMPTY_RESULT_BODY" = "Revisa que la palabra esté bien escrita. También puedes probar con menos términos o más generales.";
 "PAGING_RESULTS_TEXT" = "resultados";
+
+/* ProductDetailView Strings */
+"PRODUCT_SOLD_QUANTITY_TEXT" = "vendidos";

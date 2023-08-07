@@ -8,15 +8,7 @@
 import SwiftUI
 
 @MainActor
-protocol ProductListViewModelProtocol: ObservableObject {
-    var result: ApiResult<SearchResultModel>? { get }
-    var loading: Bool { get }
-    
-    func search(query: String) async
-}
-
-@MainActor
-class ProductListViewModel: ProductListViewModelProtocol {
+class ProductListViewModel: ObservableObject {
     // MARK: - Properties
     @Published var result: ApiResult<SearchResultModel>?
     @Published var loading: Bool = false

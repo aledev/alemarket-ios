@@ -25,68 +25,23 @@ struct ProductDetailView: View {
             
             if let detail = viewModel.result {
                 
-                switch detail {
+                ScrollView {
                     
-                case .response(let item):
-                    
-                    VStack {
+                    switch detail {
                         
-                        AsyncImage(url: item.thumbnailUrl) { image in
-                            
-                            if let image = image.image {
-                                
-                                image
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 100, height: 100)
-                                    .cornerRadius(5)
-                                
-                            } else {
-                                
-                                ImagePlaceholderView(
-                                    width: 100,
-                                    height: 100
-                                )
-                                
-                            } //: If-Else
-                            
-                        } //: AsyncImage
+                    case .response(let item):
                         
-                        VStack(alignment: .leading, spacing: 5) {
-                            
-                            Text(item.title)
-                                .font(.footnote)
-                                .foregroundColor(.primary)
-                                .fontWeight(.light)
-                                .multilineTextAlignment(.leading)
-                                .lineLimit(2)
-                            
-                            Text(item.formattedPrice)
-                                .font(.callout)
-                                .fontWeight(.light)
-                            
-                            Spacer()
-                            
-                            if let condition = item.condition {
-                                
-                                Text(condition)
-                                    .font(.caption2)
-                                    .foregroundColor(.secondary)
-                                    .fontWeight(.light)
-                                
-                            } //: If
-                            
-                            Spacer()
-                            
-                        } //: VStack
+                        ProductDetailDataView(item: item)
                         
-                    } //: VStack
+                    case .error(let error):
+                        
+                        ResultErrorView(error: error)
+                            .padding(.horizontal, 20)
+                        
+                    } //: Switch
                     
-                case .error(let error):
-                    
-                    ResultErrorView(error: error)
-                    
-                } //: Switch
+                } //: ScrollView
+                .padding(.top, 5)
                 
             } //: If
             

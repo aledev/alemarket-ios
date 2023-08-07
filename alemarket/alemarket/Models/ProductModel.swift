@@ -190,4 +190,49 @@ extension ProductModel {
         )        
     }
     
+    static var defaultWithPictures: ProductModel {
+        ProductModel(
+            id: "MLA1306048322",
+            title: "title123",
+            condition: "condition123",
+            thumbnailId: "thumbnailId123",
+            catalogProductId: "catalogProductId123",
+            listingTypeId: "listingTypeId123",
+            permalink: "permalink123",
+            buyingMode: "buyingMode123",
+            siteId: "siteId123",
+            categoryId: "categoryId123",
+            domainId: "domainId123",
+            variationId: "variationId123",
+            thumbnail: "https://http2.mlstatic.com/D_695065-MLA49737477253_042022-O.jpg",
+            currencyId: "currencyId123",
+            orderBackend: 123,
+            price: 123.0,
+            originalPrice: 123.0,
+            salePrice: 123.0,
+            soldQuantity: 123,
+            availableQuantity: 123,
+            officialStoreId: 123,
+            useThumbnailId: true,
+            acceptsMercadopago: true,
+            tags: ["tag1", "tag2"],
+            variationFilters: ["filter1", "filter2"],
+            shipping: ShippingModel.default,
+            stopTime: "stopTime123",
+            seller: SellerModel.default,
+            sellerAddress: SellerAddressModel.default,
+            address: AddressModel.default,
+            attributes: [AttributeModel.default],
+            variationsData: ["variation1": VariationDataModel.default],
+            installments: InstallmentsModel.default,
+            winnerItemId: "winnerItemId123",
+            catalogListing: true,
+            discounts: "discounts123",
+            promotions: ["promotion1", "promotion2"],
+            differentialPricing: DifferentialPricingModel.default,
+            inventoryId: "inventoryId123",
+            pictures: PictureModel.defaultArray
+        )
+    }
+    
 }

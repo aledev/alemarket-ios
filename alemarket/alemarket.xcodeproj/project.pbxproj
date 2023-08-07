@@ -70,6 +70,8 @@
 		F3F4E2F02A8090C900D75371 /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4E2EF2A8090C900D75371 /* ProductDetailViewModel.swift */; };
 		F3F4E2F22A8096BD00D75371 /* ResultErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4E2F12A8096BD00D75371 /* ResultErrorView.swift */; };
 		F3F4E2F42A80A59000D75371 /* PictureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4E2F32A80A59000D75371 /* PictureModel.swift */; };
+		F3F4E2F62A81071F00D75371 /* ImageCarrouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4E2F52A81071F00D75371 /* ImageCarrouselView.swift */; };
+		F3F4E2F82A810D4600D75371 /* ProductDetailDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4E2F72A810D4600D75371 /* ProductDetailDataView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +159,8 @@
 		F3F4E2EF2A8090C900D75371 /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
 		F3F4E2F12A8096BD00D75371 /* ResultErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultErrorView.swift; sourceTree = "<group>"; };
 		F3F4E2F32A80A59000D75371 /* PictureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureModel.swift; sourceTree = "<group>"; };
+		F3F4E2F52A81071F00D75371 /* ImageCarrouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCarrouselView.swift; sourceTree = "<group>"; };
+		F3F4E2F72A810D4600D75371 /* ProductDetailDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailDataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -404,6 +408,7 @@
 				F307ADE12A7EAB2900A198CC /* MetricsModel.swift */,
 				F307ADC92A7DBD9300A198CC /* PagingModel.swift */,
 				F307ADE32A7EAB4200A198CC /* PeriodMetricsModel.swift */,
+				F3F4E2F32A80A59000D75371 /* PictureModel.swift */,
 				F32976722A7C766300647218 /* ProductModel.swift */,
 				F307ADDF2A7EAB1700A198CC /* RatingsModel.swift */,
 				F307ADC72A7DBD7B00A198CC /* SearchResultModel.swift */,
@@ -416,7 +421,6 @@
 				F307ADE92A7EAD5A00A198CC /* ValueStructModel.swift */,
 				F307ADCD2A7DBE5800A198CC /* VariationDataModel.swift */,
 				F307ADDD2A7EAB0900A198CC /* TransactionsModel.swift */,
-				F3F4E2F32A80A59000D75371 /* PictureModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -436,9 +440,19 @@
 		F3F4E2EA2A80882200D75371 /* ProductDetail */ = {
 			isa = PBXGroup;
 			children = (
+				F3F4E2F92A810D4A00D75371 /* Subviews */,
 				F3F4E2EB2A80883F00D75371 /* ProductDetailView.swift */,
 			);
 			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		F3F4E2F92A810D4A00D75371 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				F3F4E2F52A81071F00D75371 /* ImageCarrouselView.swift */,
+				F3F4E2F72A810D4600D75371 /* ProductDetailDataView.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -584,6 +598,7 @@
 				F307ADD42A7EA9CE00A198CC /* SellerModel.swift in Sources */,
 				F307ADE82A7EACB500A198CC /* BaseAddressModel.swift in Sources */,
 				F307ADDE2A7EAB0900A198CC /* TransactionsModel.swift in Sources */,
+				F3F4E2F62A81071F00D75371 /* ImageCarrouselView.swift in Sources */,
 				F307AE202A7FCFDB00A198CC /* SearchView.swift in Sources */,
 				F32976692A7C631F00647218 /* URLSession+Extension.swift in Sources */,
 				F3F4E2EC2A80883F00D75371 /* ProductDetailView.swift in Sources */,
@@ -601,6 +616,7 @@
 				F307ADE42A7EAB4200A198CC /* PeriodMetricsModel.swift in Sources */,
 				F3F4E2EE2A80905200D75371 /* NetworkError.swift in Sources */,
 				F307ADC62A7DBB9C00A198CC /* ShippingModel.swift in Sources */,
+				F3F4E2F82A810D4600D75371 /* ProductDetailDataView.swift in Sources */,
 				F32976562A79DE1400647218 /* ApiEndpoints.swift in Sources */,
 				F307ADF42A7EDD3200A198CC /* DifferentialPricingModel.swift in Sources */,
 				F307ADE02A7EAB1700A198CC /* RatingsModel.swift in Sources */,

@@ -20,3 +20,6 @@
 "EMPTY_RESULT_TITLE" = "We didn't find any posts";
 "EMPTY_RESULT_BODY" = "Check that the word is spelled correctly. You can also try with fewer terms or more general ones.";
 "PAGING_RESULTS_TEXT" = "results";
+
+/* ProductDetailView Strings */
+"PRODUCT_SOLD_QUANTITY_TEXT" = "sold";
