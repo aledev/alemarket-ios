@@ -8,17 +8,17 @@
 import Foundation
 
 enum ApiEndpoints {
-    case productList(String)
+    case productList(String, String)
     case productDetail(String)
     
     private var value: String {
         switch self {
-        case .productList(let query):
+        case .productList(let siteId, let query):
             guard let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
                 fatalError("Something wrong happened while trying to url encode the query: \(query)")
             }
             
-            return "sites/MLA/search?q=\(encodedQuery)"
+            return "sites/\(siteId)/search?q=\(encodedQuery)"
         case .productDetail(let itemId):
             return "items/\(itemId)"
         }

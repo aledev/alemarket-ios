@@ -25,7 +25,9 @@ class ProductService: ProductServiceProvider {
     
     // MARK: - Public Functions
     func findProductsByQuery(with query: String) async -> ApiResult<SearchResultModel> {
-        let result: SearchResult = await networkManager.loadData(endpoint: .productList(query))
+        let region = Locale.current.region?.identifier ?? AppUtils.defaultRegionCode
+        let siteId = AppUtils.currentSiteIdFor(region: region)
+        let result: SearchResult = await networkManager.loadData(endpoint: .productList(siteId, query))
         
         switch result {
         case .success(let data):

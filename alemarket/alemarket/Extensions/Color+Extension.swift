@@ -22,6 +22,10 @@ extension Color {
         Color("ErrorColor")
     }
     
+    static var starRatingTintColor: Color {
+        Color("StarRatingTintColor")
+    }
+    
     static var systemBackgroundColor: Color {
         Color(UIColor.systemBackground)
     }

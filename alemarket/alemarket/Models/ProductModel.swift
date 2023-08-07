@@ -49,19 +49,6 @@ struct ProductModel: Codable {
     let inventoryId: String?
     let pictures: [PictureModel]?
     
-    // MARK: - Computed Properties
-    var thumbnailUrl: URL? {
-        URL(string: thumbnail.convertUrlToHttps)
-    }
-    
-    var formattedPrice: String {
-        guard let price = price else {
-            return ""
-        }
-        
-        return AppUtils.formatCurrency(value: price, currencyCode: currencyId)
-    }
-    
     // MARK: - Coding Keys
     enum CodingKeys: String, CodingKey {
         case id, title, condition, permalink, thumbnail, price,
@@ -92,6 +79,59 @@ struct ProductModel: Codable {
         case catalogListing = "catalog_listing"
         case differentialPricing = "differential_pricing"
         case inventoryId = "inventory_id"
+    }
+}
+
+// MARK: - Computed Properties
+extension ProductModel {
+    
+    var thumbnailUrl: URL? {
+        URL(string: thumbnail.convertUrlToHttps)
+    }
+    
+    var formattedPrice: String {
+        guard let price = price else {
+            return ""
+        }
+        
+        return AppUtils.formatCurrency(value: price, currencyCode: currencyId)
+    }
+    
+    var formattedOriginalPrice: String? {
+        guard let originalPrice = originalPrice else {
+            return nil
+        }
+        
+        return AppUtils.formatCurrency(value: originalPrice, currencyCode: currencyId)
+    }
+    
+    var formattedDiscount: String? {
+        guard let price = price,
+              let originalPrice = originalPrice else {
+            return nil
+        }
+        
+        let discount = Int(round((100.0 - (price / originalPrice * 100.0))))
+        return "\(discount) \(AppStringValue.percentageDiscountText)"
+    }
+    
+    var formattedCondition: String? {
+        attributes.first(where: {
+            $0.id == AppUtils.attributeConditionId
+        })?.valueName
+    }
+    
+    var starRating: Int? {
+        guard let seller = seller else {
+            return nil
+        }
+        
+        let positives = seller.sellerReputation.transactions.ratings.positive
+        return Int(truncating: (5 * positives) as NSNumber)
+    }
+    
+    var totalTransactions: Int {
+        seller?.sellerReputation.transactions.total ?? 0
     }
 }
 

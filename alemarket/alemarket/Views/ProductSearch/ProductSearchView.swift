@@ -15,7 +15,9 @@ struct ProductSearchView: View {
     // MARK: - Functions
     private func onSearchSubmit() {
         Task {
-            await viewModel.search(query: query)
+            if !query.removeWhiteSpaces.isEmpty {
+                await viewModel.search(query: query)
+            }
         }
     }
     
@@ -34,7 +36,7 @@ struct ProductSearchView: View {
                     )
                     .padding(.bottom, -8)
                     
-                    ProductListView(searchResult: viewModel.result)
+                    ProductListView(title: query, searchResult: viewModel.result)
                     
                     Spacer()
                     

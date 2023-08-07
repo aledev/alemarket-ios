@@ -16,6 +16,7 @@ struct ProductDetailView: View {
             )
         )
     )
+    let title: String
     let item: ProductModel
     
     // MARK: - Body
@@ -29,14 +30,15 @@ struct ProductDetailView: View {
                     
                     switch detail {
                         
-                    case .response(let item):
+                    case .response(let itemWithPictures):
                         
-                        ProductDetailDataView(item: item)
+                        ProductDetailDataView(item: item, itemWithPictures: itemWithPictures)
                         
                     case .error(let error):
                         
                         ResultErrorView(error: error)
                             .padding(.horizontal, 20)
+                            .padding(.top, 20)
                         
                     } //: Switch
                     
@@ -56,7 +58,7 @@ struct ProductDetailView: View {
             await viewModel.productDetail(id: item.id)
         }
         .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle(item.title)
+        .navigationTitle(title)
         .toolbarBackground(.visible, for: .navigationBar)
         .toolbarBackground(Color.meliBackgroundColor, for: .navigationBar)
         
@@ -70,14 +72,20 @@ struct ProductDetailView_Previews: PreviewProvider {
     static var previews: some View {
         
         // Light Theme
-        ProductDetailView(item: ProductModel.default)
-            .preferredColorScheme(.light)
-            .previewDisplayName("Light Theme")
+        ProductDetailView(
+            title: "iPhone 12 Pro Max",
+            item: ProductModel.default
+        )
+        .preferredColorScheme(.light)
+        .previewDisplayName("Light Theme")
         
         // Dark Theme
-        ProductDetailView(item: ProductModel.default)
-            .preferredColorScheme(.light)
-            .previewDisplayName("Dark Theme")
+        ProductDetailView(
+            title: "iPhone 12 Pro Max",
+            item: ProductModel.default
+        )
+        .preferredColorScheme(.dark)
+        .previewDisplayName("Dark Theme")
         
     }
     

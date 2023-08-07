@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProductListView: View {
     // MARK: - Properties
+    let title: String
     var searchResult: ApiResult<SearchResultModel>?
     
     // MARK: - Body
@@ -27,7 +28,7 @@ struct ProductListView: View {
                         
                         List(searchResult.results, id: \.id) { item in
                             
-                            NavigationLink(destination: ProductDetailView(item: item)) {
+                            NavigationLink(destination: ProductDetailView(title: title, item: item)) {
                                 
                                 ProductListItemView(item: item)
                                 
@@ -45,6 +46,7 @@ struct ProductListView: View {
                 case .error(let error):
                     
                     ResultErrorView(error: error)
+                        .padding(.top, 20)
                     
                 } //: Switch
                 
@@ -60,6 +62,7 @@ struct ProductListView: View {
 struct ProductListView_Previews: PreviewProvider {
     
     // Dummy properties for visualization
+    private static let dummyTitle = "iPhone 12 Pro Max"
     private static let resultWithData = ApiResult.response(SearchResultModel.default)
     private static let resultWithEmptyData = ApiResult.response(SearchResultModel.defaultWithEmptyData)
     private static let resultWithError = ApiResult<SearchResultModel>.error(NetworkError.requestError.errorMessage)
@@ -67,34 +70,46 @@ struct ProductListView_Previews: PreviewProvider {
     static var previews: some View {
         
         // Light Theme with data
-        ProductListView(searchResult: resultWithData)
+        ProductListView(title: dummyTitle, searchResult: resultWithData)
             .preferredColorScheme(.light)
             .previewDisplayName("Light Theme w/data")
         
         
         // Light Theme with error
-        ProductListView(searchResult: resultWithError)
-            .preferredColorScheme(.light)
-            .previewDisplayName("Light Theme w/error")
+        ProductListView(
+            title: dummyTitle,
+            searchResult: resultWithError
+        )
+        .preferredColorScheme(.light)
+        .previewDisplayName("Light Theme w/error")
         
         // Light Theme with empty response
-        ProductListView(searchResult: resultWithEmptyData)
-            .preferredColorScheme(.light)
-            .previewDisplayName("Light Theme Empty")
+        ProductListView(
+            title: dummyTitle,
+            searchResult: resultWithEmptyData
+        )
+        .preferredColorScheme(.light)
+        .previewDisplayName("Light Theme Empty")
                     
         
         // Dark Theme with data
-        ProductListView(searchResult: resultWithData)
-            .preferredColorScheme(.dark)
-            .previewDisplayName("Dark Theme w/data")
+        ProductListView(
+            title: dummyTitle,
+            searchResult: resultWithData
+        )
+        .preferredColorScheme(.dark)
+        .previewDisplayName("Dark Theme w/data")
         
         // Dark Theme with error
-        ProductListView(searchResult: resultWithError)
-            .preferredColorScheme(.dark)
-            .previewDisplayName("Dark Theme w/error")
+        ProductListView(
+            title: dummyTitle,
+            searchResult: resultWithError
+        )
+        .preferredColorScheme(.dark)
+        .previewDisplayName("Dark Theme w/error")
         
         // Light Theme with empty response
-        ProductListView(searchResult: nil)
+        ProductListView(title: dummyTitle, searchResult: nil)
             .preferredColorScheme(.dark)
             .previewDisplayName("Dark Theme Empty")
         

@@ -22,4 +22,5 @@ struct AppStringValue {
     static let emptyResultBody = NSLocalizedString("EMPTY_RESULT_BODY", comment: "Body Text when there aren't results for a specific query")
     static let pagingResultsText = NSLocalizedString("PAGING_RESULTS_TEXT", comment: "Text that appears on the right side of the number of results found")
     static let productSoldQuantityText = NSLocalizedString("PRODUCT_SOLD_QUANTITY_TEXT", comment: "Text that appear on the right side of the sold quantity on the product detail view")
+    static let percentageDiscountText = NSLocalizedString("PRODUCT_PERCENTAGE_DISCOUNT_TEXT", comment: "Text that appear on the right side of the discount over the product original price")
 }

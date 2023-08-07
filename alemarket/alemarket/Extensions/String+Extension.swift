@@ -13,4 +13,8 @@ extension String {
         self.replacingOccurrences(of: "http://", with: "https://")
     }
     
+    var removeWhiteSpaces: String {
+        self.components(separatedBy: .whitespacesAndNewlines).joined()
+    }
+    
 }

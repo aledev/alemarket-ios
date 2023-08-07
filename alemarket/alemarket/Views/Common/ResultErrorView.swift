@@ -14,10 +14,14 @@ struct ResultErrorView: View {
     // MARK: - Body
     var body: some View {
         
-        Text(error)
-            .multilineTextAlignment(.leading)
-            .font(.body)
-            .foregroundColor(.errorColor)
+        VStack {
+            
+            Text(error)
+                .multilineTextAlignment(.leading)
+                .font(.body)
+                .foregroundColor(.errorColor)
+            
+        } //: VStack
         
     } //: Body
     

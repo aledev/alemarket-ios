@@ -25,8 +25,9 @@ final class ApiEndpointsTests: XCTestCase {
     // MARK: - Tests
     func testProductListEndpointURL() {
         let query = "test"
-        let expectedURL = URL(string: "https://mock.api.mercadolibre.com/sites/MLA/search?q=\(query)")
-        let actualURL = ApiEndpoints.productList(query).url(relativeTo: mockURLProvider)
+        let siteId = "siteId123"
+        let expectedURL = URL(string: "https://mock.api.mercadolibre.com/sites/siteId123/search?q=\(query)")
+        let actualURL = ApiEndpoints.productList(siteId, query).url(relativeTo: mockURLProvider)
         
         XCTAssertEqual(actualURL, expectedURL)
     }

@@ -52,7 +52,7 @@ struct ProductListItemView: View {
                     
                 Spacer()
                 
-                if let condition = item.condition {
+                if let condition = item.formattedCondition {
                     
                     Text(condition)
                         .font(.caption2)
@@ -62,6 +62,24 @@ struct ProductListItemView: View {
                 } //: If
                 
                 Spacer()
+                
+                if let rating = item.starRating {
+                    
+                    HStack {
+                        
+                        StarRatingView(
+                            rating: rating,
+                            font: .caption2
+                        )
+                        
+                        Text("\(item.totalTransactions)")
+                            .font(.caption2)
+                            .foregroundColor(.starRatingTintColor)
+                        
+                    } //: HStack
+                    .padding(.bottom, 5)
+                     
+                } //: If
                 
             } //: VStack
             
