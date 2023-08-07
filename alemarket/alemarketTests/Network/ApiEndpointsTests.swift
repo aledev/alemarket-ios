@@ -25,7 +25,7 @@ final class ApiEndpointsTests: XCTestCase {
     // MARK: - Tests
     func testProductListEndpointURL() {
         let query = "test"
-        let expectedURL = URL(string: "https://mock.api.mercadolibre.com/search?q=\(query)")
+        let expectedURL = URL(string: "https://mock.api.mercadolibre.com/sites/MLA/search?q=\(query)")
         let actualURL = ApiEndpoints.productList(query).url(relativeTo: mockURLProvider)
         
         XCTAssertEqual(actualURL, expectedURL)
@@ -33,7 +33,7 @@ final class ApiEndpointsTests: XCTestCase {
     
     func testProductDetailEndpointURL() {
         let itemId = "1234"
-        let expectedURL = URL(string: "https://mock.api.mercadolibre.com/items/\(itemId)?include_attributes=all")
+        let expectedURL = URL(string: "https://mock.api.mercadolibre.com/items/\(itemId)")
         let actualURL = ApiEndpoints.productDetail(itemId).url(relativeTo: mockURLProvider)
         
         XCTAssertEqual(actualURL, expectedURL)
