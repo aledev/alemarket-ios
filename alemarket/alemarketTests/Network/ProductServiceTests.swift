@@ -31,7 +31,7 @@ final class ProductServiceTests: XCTestCase {
         mockNetworkManager.data = expected
         mockNetworkManager.error = nil
         
-        let result = await productService.findProductsByQuery(query: "query1")
+        let result = await productService.findProductsByQuery(with: "query1")
         
         switch result {
         case .response(let data):
@@ -46,7 +46,7 @@ final class ProductServiceTests: XCTestCase {
         mockNetworkManager.data = nil
         mockNetworkManager.error = NetworkError.invalidURL
         
-        let result = await productService.findProductsByQuery(query: "query1")
+        let result = await productService.findProductsByQuery(with: "query1")
         
         switch result {
         case .response(_):
@@ -61,7 +61,7 @@ final class ProductServiceTests: XCTestCase {
         mockNetworkManager.data = nil
         mockNetworkManager.error = NetworkError.decodingError
         
-        let result = await productService.findProductsByQuery(query: "query1")
+        let result = await productService.findProductsByQuery(with: "query1")
         
         switch result {
         case .response(_):
@@ -76,7 +76,7 @@ final class ProductServiceTests: XCTestCase {
         mockNetworkManager.data = nil
         mockNetworkManager.error = NetworkError.invalidServerResponse
         
-        let result = await productService.findProductsByQuery(query: "query1")
+        let result = await productService.findProductsByQuery(with: "query1")
         
         switch result {
         case .response(_):
@@ -91,7 +91,7 @@ final class ProductServiceTests: XCTestCase {
         mockNetworkManager.data = nil
         mockNetworkManager.error = NetworkError.requestError
         
-        let result = await productService.findProductsByQuery(query: "query1")
+        let result = await productService.findProductsByQuery(with: "query1")
         
         switch result {
         case .response(_):
