@@ -55,6 +55,9 @@ struct ProductDetailView: View {
             
         } //: ZStack
         .task {
+            // Some User Feedback
+            HapticsFeedbackHelper.shared.notify()
+            // Get the Product Detail with the Images
             await viewModel.productDetail(id: item.id)
         }
         .navigationBarTitleDisplayMode(.inline)

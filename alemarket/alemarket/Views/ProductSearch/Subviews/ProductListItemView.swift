@@ -46,18 +46,28 @@ struct ProductListItemView: View {
                     .multilineTextAlignment(.leading)
                     .lineLimit(2)
                 
-                Text(item.formattedPrice)
-                    .font(.callout)
-                    .fontWeight(.light)
+                HStack {
+                    
+                    Text(item.formattedPrice)
+                        .font(.callout)
+                        .fontWeight(.light)
+                    
+                    if let discount = item.formattedDiscount {
+                        
+                        Text(discount)
+                            .font(.caption)
+                            .fontWeight(.medium)
+                            .foregroundColor(.meliGreenColor)
+                        
+                    } //: If
+                    
+                } //: HStack
                     
                 Spacer()
                 
                 if let condition = item.formattedCondition {
                     
-                    Text(condition)
-                        .font(.caption2)
-                        .foregroundColor(.secondary)
-                        .fontWeight(.light)
+                    ConditionTextView(condition: condition)
                     
                 } //: If
                 
@@ -84,6 +94,7 @@ struct ProductListItemView: View {
             } //: VStack
             
         } //: HStack
+        
         
     } //: Body
     

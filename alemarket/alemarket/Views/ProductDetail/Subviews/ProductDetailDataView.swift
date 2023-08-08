@@ -112,8 +112,8 @@ struct ProductDetailDataView: View {
                         
                         Text(discount)
                             .font(.callout)
-                            .fontWeight(.light)
-                            .foregroundColor(.green)
+                            .fontWeight(.medium)
+                            .foregroundColor(.meliGreenColor)
                         
                     } //: If
                     

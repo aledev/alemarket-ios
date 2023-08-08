@@ -98,7 +98,12 @@ extension ProductModel {
     }
     
     var formattedOriginalPrice: String? {
-        guard let originalPrice = originalPrice else {
+        guard let price = price,
+                let originalPrice = originalPrice else {
+            return nil
+        }
+        
+        if price == originalPrice {
             return nil
         }
         
@@ -111,8 +116,13 @@ extension ProductModel {
             return nil
         }
         
+        // No Discount
+        if price == originalPrice {
+            return nil
+        }
+        
         let discount = Int(round((100.0 - (price / originalPrice * 100.0))))
-        return "\(discount) \(AppStringValue.percentageDiscountText)"
+        return "\(discount)\(AppStringValue.percentageDiscountText)"
     }
     
     var formattedCondition: String? {

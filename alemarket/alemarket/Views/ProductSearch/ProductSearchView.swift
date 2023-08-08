@@ -9,13 +9,23 @@ import SwiftUI
 
 struct ProductSearchView: View {
     // MARK: - Properties
-    @EnvironmentObject private var viewModel: ProductListViewModel
+    @StateObject private var viewModel = ProductListViewModel(
+        productService: ProductService(
+            networkManager: NetworkManager(
+                urlProvider: ProdURLProvider()
+            )
+        )
+    )
     @State private var query: String = ""
     
     // MARK: - Functions
     private func onSearchSubmit() {
         Task {
-            if !query.removeWhiteSpaces.isEmpty {
+            // Remove whitespaces
+            query = query.trimmedValue
+            
+            if !query.isEmpty {
+                HapticsFeedbackHelper.shared.notify()
                 await viewModel.search(query: query)
             }
         }
@@ -57,21 +67,16 @@ struct ProductSearchView: View {
 
 // MARK: - Previews
 struct ProductSearchView_Previews: PreviewProvider {
-    
-    // Preview ViewModel
-    @StateObject private static var viewModel = ProductListViewModel(productService: ProductService(networkManager: NetworkManager(urlProvider: ProdURLProvider())))
-    
+        
     static var previews: some View {
         
         // Light Theme
         ProductSearchView()
-            .environmentObject(viewModel)
             .preferredColorScheme(.light)
             .previewDisplayName("Light Theme")
         
         // Dark Theme
-        ProductSearchView()
-            .environmentObject(viewModel)
+        ProductSearchView()            
             .preferredColorScheme(.dark)
             .previewDisplayName("Dark Theme")
         

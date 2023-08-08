@@ -74,6 +74,8 @@
 		F3F4E2F82A810D4600D75371 /* ProductDetailDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4E2F72A810D4600D75371 /* ProductDetailDataView.swift */; };
 		F3F4E2FB2A81781D00D75371 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4E2FA2A81781D00D75371 /* StarRatingView.swift */; };
 		F3F4E3022A81A18A00D75371 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4E3012A81A18A00D75371 /* UtilsTests.swift */; };
+		F3F4E3042A82646400D75371 /* HapticsFeedbackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4E3032A82646400D75371 /* HapticsFeedbackHelper.swift */; };
+		F3F4E3062A826A6B00D75371 /* ConditionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4E3052A826A6B00D75371 /* ConditionTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +167,8 @@
 		F3F4E2F72A810D4600D75371 /* ProductDetailDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailDataView.swift; sourceTree = "<group>"; };
 		F3F4E2FA2A81781D00D75371 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
 		F3F4E3012A81A18A00D75371 /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
+		F3F4E3032A82646400D75371 /* HapticsFeedbackHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsFeedbackHelper.swift; sourceTree = "<group>"; };
+		F3F4E3052A826A6B00D75371 /* ConditionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +237,7 @@
 			children = (
 				F307AE222A7FD10300A198CC /* AppStringKeys.swift */,
 				F3F4E2E52A804D4200D75371 /* AppUtils.swift */,
+				F3F4E3032A82646400D75371 /* HapticsFeedbackHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -434,6 +439,7 @@
 		F3F4E2E92A806A3400D75371 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				F3F4E3052A826A6B00D75371 /* ConditionTextView.swift */,
 				F3F4E2E32A80480300D75371 /* EmptyResultView.swift */,
 				F307AE1D2A7FC4A100A198CC /* ProductListView.swift */,
 				F3F4E2DF2A803E0800D75371 /* ProductListItemView.swift */,
@@ -621,6 +627,7 @@
 				F32976582A79DF0500647218 /* URL+Extension.swift in Sources */,
 				F307ADCA2A7DBD9300A198CC /* PagingModel.swift in Sources */,
 				F3F4E2F02A8090C900D75371 /* ProductDetailViewModel.swift in Sources */,
+				F3F4E3062A826A6B00D75371 /* ConditionTextView.swift in Sources */,
 				F307AE1E2A7FC4A100A198CC /* ProductListView.swift in Sources */,
 				F329766E2A7C725600647218 /* ProductServiceProvider.swift in Sources */,
 				F3F4E2E02A803E0800D75371 /* ProductListItemView.swift in Sources */,
@@ -640,6 +647,7 @@
 				F307ADF22A7EBB1600A198CC /* SalesModel.swift in Sources */,
 				F3F4E2FB2A81781D00D75371 /* StarRatingView.swift in Sources */,
 				F307ADC82A7DBD7B00A198CC /* SearchResultModel.swift in Sources */,
+				F3F4E3042A82646400D75371 /* HapticsFeedbackHelper.swift in Sources */,
 				F307ADD62A7EA9FE00A198CC /* SellerAddressModel.swift in Sources */,
 				F3F4E2E62A804D4200D75371 /* AppUtils.swift in Sources */,
 				F307ADE62A7EAB5C00A198CC /* ExcludedModel.swift in Sources */,

@@ -22,6 +22,10 @@ extension Color {
         Color("ErrorColor")
     }
     
+    static var meliGreenColor: Color {
+        Color("MeliGreenColor")
+    }
+    
     static var starRatingTintColor: Color {
         Color("StarRatingTintColor")
     }

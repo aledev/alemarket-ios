@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - Static App Values
 class AppUtils {
-    
+        
     static let defaultRegionCode = "UY"
     static let siteIdArgentina = "MLA"
     static let siteIdChile = "MLC"
