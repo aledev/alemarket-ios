@@ -10,7 +10,7 @@ import Foundation
 struct AddressModel: Codable {
     let stateId: String
     let stateName: String
-    let cityId: String
+    let cityId: String?
     let cityName: String
 
     enum CodingKeys: String, CodingKey {

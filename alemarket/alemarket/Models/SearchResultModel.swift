@@ -42,7 +42,17 @@ extension SearchResultModel {
             countryDefaultTimeZone: "countryDefaultTimeZone123",
             query: "query123",
             paging: PagingModel.default,
-            results: [ProductModel.default]
+            results: [ProductModel.default, ProductModel.defaultWithPictures]
+        )
+    }
+    
+    static var defaultWithEmptyData: SearchResultModel {
+        SearchResultModel(
+            siteId: "siteId123",
+            countryDefaultTimeZone: "countryDefaultTimeZone123",
+            query: "query123",
+            paging: PagingModel(total: 0, primaryResults: 0, offset: 0, limit: 50),
+            results: []
         )
     }
     

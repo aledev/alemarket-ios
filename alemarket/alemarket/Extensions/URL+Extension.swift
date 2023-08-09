@@ -10,7 +10,7 @@ import Foundation
 extension URL {
     
     static var apiBaseURL: URL {
-        URL(string: "https://api.mercadolibre.com/sites/MLA")!
+        URL(string: "https://api.mercadolibre.com/")!
     }
     
 }

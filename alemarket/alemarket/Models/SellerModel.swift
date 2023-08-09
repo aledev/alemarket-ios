@@ -29,6 +29,15 @@ struct SellerModel: Codable {
     }
 }
 
+// MARK: - Computed Properties
+extension SellerModel {
+    
+    var storeURL: URL? {
+        URL(string: permalink)
+    }
+    
+}
+
 // MARK: - Equatable Implementation
 extension SellerModel: Equatable {
     

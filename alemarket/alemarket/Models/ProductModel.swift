@@ -10,47 +10,50 @@ import Foundation
 struct ProductModel: Codable {
     let id: String
     let title: String
-    let condition: String
+    let condition: String?
     let thumbnailId: String
-    let catalogProductId: String
+    let catalogProductId: String?
     let listingTypeId: String
     let permalink: String
     let buyingMode: String
     let siteId: String
     let categoryId: String
     let domainId: String
-    let variationId: String
+    let variationId: String?
     let thumbnail: String
-    let currencyId: String
+    let currencyId: String?
     let orderBackend: Int?
-    let price: Int?
-    let originalPrice: Int?
-    let salePrice: Int?
+    let price: Double?
+    let originalPrice: Double?
+    let salePrice: Double?
     let soldQuantity: Int
     let availableQuantity: Int
     let officialStoreId: Int?
-    let useThumbnailId: Bool
+    let useThumbnailId: Bool?
     let acceptsMercadopago: Bool
     let tags: [String]
-    let variationFilters: [String]
+    let variationFilters: [String]?
     let shipping: ShippingModel
     let stopTime: String
-    let seller: SellerModel
+    let seller: SellerModel?
     let sellerAddress: SellerAddressModel
-    let address: AddressModel
+    let address: AddressModel?
     let attributes: [AttributeModel]
-    let variationsData: [String: VariationDataModel]
-    let installments: InstallmentsModel
+    let variationsData: [String: VariationDataModel]?
+    let installments: InstallmentsModel?
     let winnerItemId: String?
     let catalogListing: Bool
     let discounts: String?
-    let promotions: [String]
+    let promotions: [String]?
     let differentialPricing: DifferentialPricingModel?
     let inventoryId: String?
-
+    let pictures: [PictureModel]?
+    
+    // MARK: - Coding Keys
     enum CodingKeys: String, CodingKey {
-        case id, title, condition, permalink, thumbnail, price, tags, seller,
-             address, attributes, shipping, installments, discounts, promotions        
+        case id, title, condition, permalink, thumbnail, price,
+             tags, seller, address, attributes, shipping, installments,
+             discounts, promotions, pictures
         case thumbnailId = "thumbnail_id"
         case catalogProductId = "catalog_product_id"
         case listingTypeId = "listing_type_id"
@@ -77,6 +80,83 @@ struct ProductModel: Codable {
         case differentialPricing = "differential_pricing"
         case inventoryId = "inventory_id"
     }
+}
+
+// MARK: - Computed Properties
+extension ProductModel {
+    
+    var thumbnailUrl: URL? {
+        URL(string: thumbnail.convertUrlToHttps)
+    }
+    
+    var formattedPrice: String {
+        guard let price = price else {
+            return ""
+        }
+        
+        return AppUtils.formatCurrency(value: price, currencyCode: currencyId)
+    }
+    
+    var formattedOriginalPrice: String? {
+        guard let price = price,
+                let originalPrice = originalPrice else {
+            return nil
+        }
+        
+        if price == originalPrice {
+            return nil
+        }
+        
+        return AppUtils.formatCurrency(value: originalPrice, currencyCode: currencyId)
+    }
+    
+    var formattedDiscount: String? {
+        guard let price = price,
+              let originalPrice = originalPrice else {
+            return nil
+        }
+        
+        // No Discount
+        if price == originalPrice {
+            return nil
+        }
+        
+        let discount = Int(round((100.0 - (price / originalPrice * 100.0))))
+                        
+        return discount > 0 ? "\(discount)\(AppStringValue.percentageDiscountText)" : nil
+    }
+    
+    var formattedCondition: String? {
+        attributes.first(where: {
+            $0.id == AppUtils.attributeConditionId
+        })?.valueName
+    }
+    
+    var freeShipping: String? {
+        shipping.freeShipping ? AppStringValue.productFreeShipping : nil
+    }
+    
+    var bestSeller: String? {
+        tags.contains(where: { $0 == AppUtils.bestSellerCandidate }) ? AppStringValue.productBestSellerCandidate : nil
+    }
+    
+    var starRating: Int? {
+        guard let seller = seller else {
+            return nil
+        }
+        
+        let positives = seller.sellerReputation.transactions.ratings.positive
+        return Int(truncating: (5 * positives) as NSNumber)
+    }
+    
+    var totalTransactions: Int {
+        seller?.sellerReputation.transactions.total ?? 0
+    }
+    
+    var postLink: URL? {
+        URL(string: permalink)
+    }
+    
 }
 
 // MARK: - Equatable Implementation
@@ -131,7 +211,7 @@ extension ProductModel {
     
     static var `default`: ProductModel {
         ProductModel(
-            id: "id123",
+            id: "MLA1306048322",
             title: "title123",
             condition: "condition123",
             thumbnailId: "thumbnailId123",
@@ -143,12 +223,12 @@ extension ProductModel {
             categoryId: "categoryId123",
             domainId: "domainId123",
             variationId: "variationId123",
-            thumbnail: "thumbnail123",
+            thumbnail: "https://http2.mlstatic.com/D_695065-MLA49737477253_042022-O.jpg",
             currencyId: "currencyId123",
             orderBackend: 123,
-            price: 123,
-            originalPrice: 123,
-            salePrice: 123,
+            price: 123.0,
+            originalPrice: 123.0,
+            salePrice: 123.0,
             soldQuantity: 123,
             availableQuantity: 123,
             officialStoreId: 123,
@@ -169,8 +249,54 @@ extension ProductModel {
             discounts: "discounts123",
             promotions: ["promotion1", "promotion2"],
             differentialPricing: DifferentialPricingModel.default,
-            inventoryId: "inventoryId123"
+            inventoryId: "inventoryId123",
+            pictures: nil
         )        
+    }
+    
+    static var defaultWithPictures: ProductModel {
+        ProductModel(
+            id: "MLA1306048322",
+            title: "title123",
+            condition: "condition123",
+            thumbnailId: "thumbnailId123",
+            catalogProductId: "catalogProductId123",
+            listingTypeId: "listingTypeId123",
+            permalink: "permalink123",
+            buyingMode: "buyingMode123",
+            siteId: "siteId123",
+            categoryId: "categoryId123",
+            domainId: "domainId123",
+            variationId: "variationId123",
+            thumbnail: "https://http2.mlstatic.com/D_695065-MLA49737477253_042022-O.jpg",
+            currencyId: "currencyId123",
+            orderBackend: 123,
+            price: 123.0,
+            originalPrice: 123.0,
+            salePrice: 123.0,
+            soldQuantity: 123,
+            availableQuantity: 123,
+            officialStoreId: 123,
+            useThumbnailId: true,
+            acceptsMercadopago: true,
+            tags: ["tag1", "tag2"],
+            variationFilters: ["filter1", "filter2"],
+            shipping: ShippingModel.default,
+            stopTime: "stopTime123",
+            seller: SellerModel.default,
+            sellerAddress: SellerAddressModel.default,
+            address: AddressModel.default,
+            attributes: [AttributeModel.default],
+            variationsData: ["variation1": VariationDataModel.default],
+            installments: InstallmentsModel.default,
+            winnerItemId: "winnerItemId123",
+            catalogListing: true,
+            discounts: "discounts123",
+            promotions: ["promotion1", "promotion2"],
+            differentialPricing: DifferentialPricingModel.default,
+            inventoryId: "inventoryId123",
+            pictures: PictureModel.defaultArray
+        )
     }
     
 }

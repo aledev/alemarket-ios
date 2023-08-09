@@ -6,25 +6,30 @@
 //
 
 import SwiftUI
+import Combine
 
 @MainActor
-protocol ProductListViewModelProtocol: ObservableObject {
-    var result: ApiResult<SearchResultModel>? { get }
-    var loading: Bool { get }
-    
-    func search(query: String) async
-}
-
-@MainActor
-class ProductListViewModel: ProductListViewModelProtocol {
+class ProductListViewModel: ObservableObject {
     // MARK: - Properties
+    @Published var region: String = NSLocale.current.region?.identifier ?? AppUtils.defaultRegionCode
     @Published var result: ApiResult<SearchResultModel>?
     @Published var loading: Bool = false
-    let productService: ProductServiceProvider
+    private let productService: ProductServiceProvider
+    private var cancellables: Set<AnyCancellable> = []
     
     // MARK: - Initializer
     init(productService: ProductServiceProvider) {
-        self.productService = productService        
+        self.productService = productService
+        
+        NotificationCenter.default.publisher(for: NSLocale.currentLocaleDidChangeNotification).sink { [weak self] _ in
+            guard let self = self,
+                  let identifier = NSLocale.current.region?.identifier else {
+                return
+            }
+            
+            self.region = identifier
+        }
+        .store(in: &cancellables)
     }
  
     // MARK: - Public Functions
@@ -32,6 +37,6 @@ class ProductListViewModel: ProductListViewModelProtocol {
         self.loading = true
         defer { self.loading = false }
         
-        self.result = await productService.findProductsByQuery(query: query)
+        self.result = await productService.findProductsByQuery(for: region, with: query)
     }
 }

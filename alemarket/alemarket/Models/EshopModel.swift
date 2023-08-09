@@ -14,8 +14,7 @@ struct EshopModel: Codable {
     let eshopStatusId: Int
     let siteId: String
     let eshopExperience: Int
-    let eshopRubro: String?
-    let eshopLocations: [String]?
+    let eshopRubro: [String: String]?
     let eshopLogoUrl: String
 
     enum CodingKeys: String, CodingKey {
@@ -25,8 +24,7 @@ struct EshopModel: Codable {
         case eshopStatusId = "eshop_status_id"
         case siteId = "site_id"
         case eshopExperience = "eshop_experience"
-        case eshopRubro = "eshop_rubro"
-        case eshopLocations = "eshop_locations"
+        case eshopRubro = "eshop_rubro"        
         case eshopLogoUrl = "eshop_logo_url"
     }
 }
@@ -37,7 +35,6 @@ extension EshopModel: Equatable {
     static func == (lhs: EshopModel, rhs: EshopModel) -> Bool {
         lhs.eshopId == rhs.eshopId &&
         lhs.eshopExperience == rhs.eshopExperience &&
-        lhs.eshopLocations == rhs.eshopLocations &&
         lhs.eshopLogoUrl == rhs.eshopLogoUrl &&
         lhs.eshopRubro == rhs.eshopRubro &&
         lhs.eshopStatusId == rhs.eshopStatusId &&
@@ -59,8 +56,7 @@ extension EshopModel {
             eshopStatusId: 123,
             siteId: "siteId123",
             eshopExperience: 123,
-            eshopRubro: "eshopRubro123",
-            eshopLocations: ["eshopLocations1", "eshopLocations1"],
+            eshopRubro: ["eshopRubro123": "asdasd123"],
             eshopLogoUrl: "eshopLogoUrl123"
         )
     }

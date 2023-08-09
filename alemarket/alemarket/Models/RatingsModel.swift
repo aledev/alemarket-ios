@@ -8,9 +8,9 @@
 import Foundation
 
 struct RatingsModel: Codable {
-    let negative: Int
-    let neutral: Int
-    let positive: Int
+    let negative: Double
+    let neutral: Double
+    let positive: Double
     
     enum CodingKeys: String, CodingKey {
         case negative, neutral, positive
@@ -33,9 +33,9 @@ extension RatingsModel {
     
     static var `default`: RatingsModel {
         RatingsModel(
-            negative: 123,
-            neutral: 123,
-            positive: 123
+            negative: 123.0,
+            neutral: 123.0,
+            positive: 123.0
         )
     }
     

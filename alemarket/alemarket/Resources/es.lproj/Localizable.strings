@@ -1,4 +1,5 @@
-/* 
+
+/*
   Localizable.strings: English
   alemarket
 
@@ -7,13 +8,28 @@
 */
 
 /* NetworkError Strings */
-"INVALID_URL" = "The URL wasn't correct. Please try again.";
-"REQUEST_ERROR" = "There was an error while the app was doing the request. Please try again.";
-"INVALID_SERVER_RESPONSE" = "The server response wasn't correct. Please try again.";
-"DECODING_ERROR" = "There was an error while the app was processing the response. Please try again";
+"INVALID_URL" = "La URL no es correcta. Por favor, inténtalo de nuevo.";
+"REQUEST_ERROR" = "Ocurrió un error mientras la aplicación realizaba la solicitud. Por favor, inténtalo de nuevo.";
+"INVALID_SERVER_RESPONSE" = "La respuesta del servidor no fue correcta. Por favor, inténtalo de nuevo.";
+"DECODING_ERROR" = "Ocurrió un error mientras la aplicación procesaba la respuesta. Por favor, inténtalo de nuevo.";
 
 /* LoadingView Strings */
-"LOADING_TEXT" = "Loading...";
+"LOADING_TEXT" = "Cargando...";
 
 /* SearchView Strings */
-"SEARCH_PLACEHOLDER" = "What are you looking for? (Ex: iPhone 12 Pro Max)";
+"SEARCH_PLACEHOLDER" = "¿Qué estás buscando? (Ej: iPhone 12 Pro Max)";
+"EMPTY_RESULT_TITLE" = "No encontramos publicaciones";
+"EMPTY_RESULT_BODY" = "Revisa que la palabra esté bien escrita. También puedes probar con menos términos o más generales.";
+"PAGING_RESULTS_TEXT" = "resultados";
+"SEARCH_REGION_SEARCH_TITLE" = "Buscando resultados para:";
+
+/* ProductDetailView Strings */
+"PRODUCT_SOLD_QUANTITY_TEXT" = "vendidos";
+"PRODUCT_PERCENTAGE_DISCOUNT_TEXT" = "% OFF";
+"PRODUCT_FREE_SHIPPING" = "Envío gratis";
+"PRODUCT_BEST_SELLER_CANDIDATE" = "Más Vendido";
+"PRODUCT_ATTRIBUTES_TITLE" = "Características del Producto";
+"PRODUCT_DESCRIPTION_TITLE" = "Descripción del Producto";
+"PRODUCT_WITHOUT_DESCRIPTION_TEXT" = "Producto sin descripción.";
+"PRODUCT_SELLER_INFO_TITLE" = "Vendido por";
+"PRODUCT_ORIGINAL_POST_BUTTON_TEXT" = "Ver Publicación Original";

@@ -38,7 +38,7 @@ final class NetworkManagerTests: XCTestCase {
         mockURLSession.data = testData
         mockURLSession.response = testResponse
 
-        let result: Result<TestDecobleResult, NetworkError> = await networkManager.loadData(endpoint: .productList("test"))
+        let result: Result<TestDecobleResult, NetworkError> = await networkManager.loadData(endpoint: .productList("siteId123", "test"))
         
         switch result {
         case .success(let data):
@@ -55,7 +55,7 @@ final class NetworkManagerTests: XCTestCase {
         mockURLSession.data = testData
         mockURLSession.response = testResponse
 
-        let result: Result<TestDecobleResult, NetworkError> = await networkManager.loadData(endpoint: .productList("test"))
+        let result: Result<TestDecobleResult, NetworkError> = await networkManager.loadData(endpoint: .productList("siteId123", "test"))
         
         switch result {
         case .success(_):
@@ -72,7 +72,7 @@ final class NetworkManagerTests: XCTestCase {
         mockURLSession.data = testData
         mockURLSession.response = testResponse
 
-        let result: Result<TestDecobleResult, NetworkError> = await networkManager.loadData(endpoint: .productList("test"))
+        let result: Result<TestDecobleResult, NetworkError> = await networkManager.loadData(endpoint: .productList("siteId123", "test"))
         
         switch result {
         case .success(_):

@@ -8,14 +8,14 @@
 import Foundation
 
 struct SellerAddressModel: Codable {
-    let comment: String
-    let addressLine: String
+    let comment: String?
+    let addressLine: String?
     let id: Int?
     let latitude: Double?
     let longitude: Double?
-    let country: BaseAddressModel
-    let state: BaseAddressModel
-    let city: BaseAddressModel
+    let country: BaseAddressModel?
+    let state: BaseAddressModel?
+    let city: BaseAddressModel?
 
     enum CodingKeys: String, CodingKey {
         case id, latitude, longitude, country, state, city, comment

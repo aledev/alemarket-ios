@@ -6,21 +6,18 @@
 //
 
 import SwiftUI
+import Combine
 
 @main
 struct alemarketApp: App {
-    // MARK: - Properties
-    @StateObject var productListViewModel = ProductListViewModel(
-        productService: ProductService(
-            networkManager: NetworkManager(
-                urlProvider: ProdURLProvider()
-            )
-        ))
-    
+    // MARK: - Body
     var body: some Scene {
+        
         WindowGroup {
-            ProductListView()
-                .environmentObject(productListViewModel)
-        }
-    }
+            
+            ProductSearchView()                
+            
+        } //: WindowGroup
+        
+    } //: Body
 }
