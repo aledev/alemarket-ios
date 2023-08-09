@@ -23,6 +23,17 @@ class AppUtils {
     static let siteIdPeru = "MPE"
     static let siteIdUruguay = "MLU"
     
+    // CountryNames
+    static let countryNameForArgentina = "Argentina"
+    static let countryNameForBolivia = "Bolivia"
+    static let countryNameForBrasil = "Brasil"
+    static let countryNameForChile = "Chile"
+    static let countryNameForColombia = "Colombia"
+    static let countryNameForEcuador = "Ecuador"
+    static let countryNameForParaguay = "Paraguay"
+    static let countryNameForPeru = "Peru"
+    static let countryNameForUruguay = "Uruguay"
+    
     // Product Keys
     static let attributeConditionId = "ITEM_CONDITION"
     static let bestSellerCandidate = "best_seller_candidate"
@@ -64,6 +75,29 @@ extension AppUtils {
             return siteIdPeru
         default:
             return siteIdUruguay
+        }
+    }
+    
+    static func countryNameFor(region: String) -> String {
+        switch region {
+        case "AR":
+            return "Argentina"
+        case "BO":
+            return "Bolivia"
+        case "BR":
+            return "Brasil"
+        case "CL":
+            return "Chile"
+        case "CO":
+            return "Colombia"
+        case "EC":
+            return "Ecuador"
+        case "PY":
+            return "Paraguay"
+        case "PE":
+            return "Peru"
+        default:
+            return "Uruguay"
         }
     }
     

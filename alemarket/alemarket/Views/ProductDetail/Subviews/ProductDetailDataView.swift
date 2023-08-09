@@ -23,6 +23,7 @@ struct ProductDetailDataView: View {
         
         VStack {
             
+            // Condition, Rating and Title
             VStack(alignment: .leading, spacing: 10) {
                 
                 HStack(spacing: 5) {
@@ -75,6 +76,7 @@ struct ProductDetailDataView: View {
             .padding(.top, 10)
             .padding(.bottom, 20)
             
+            // Product Images
             if let pictures = itemWithPictures.pictures {
                 
                 ImageCarrouselView(pictures: pictures)
@@ -83,6 +85,7 @@ struct ProductDetailDataView: View {
                 
             } //: If
             
+            // Price
             VStack {
                 
                 if let originalPrice = item.formattedOriginalPrice {
@@ -122,9 +125,86 @@ struct ProductDetailDataView: View {
                 } //: HStack
                 
             } //: VStack
-            .padding(.top, 10)
+            .padding(.vertical, 10)
+            
+            Divider()
+            
+            // Seller Info
+            if let sellerInfo = item.seller {
+                
+                VStack {
+                    
+                    ProductSellerInfoView(item: sellerInfo)
+                    
+                } //: VStack
+                .padding(.vertical, 10)                
+                
+            } //: If
+            
+            // Attributes
+            VStack {
+                
+                ProductAttributesView(attributes: item.attributes)
+                
+            } //: VStack
+            .padding(.vertical, 10)
+            .padding(.horizontal, 5)
+            .background(
+                RoundedRectangle(cornerRadius: 5)
+                    .fill(
+                        Color
+                            .secondarySystemBackgroundColor
+                            .opacity(0.5)
+                    )
+            )
+            
+            // Product Description
+            VStack {
+                
+                ProductDescriptionView(item: item)
+                
+            } //: VStack
+            .padding(.vertical, 10)
+            .padding(.horizontal, 5)
+            .background(
+                RoundedRectangle(cornerRadius: 5)
+                    .fill(
+                        Color
+                            .secondarySystemBackgroundColor
+                            .opacity(0.5)
+                    )
+            )
             
             Spacer()
+            
+            Divider()
+            
+            // Post Link
+            if let postLink = item.postLink {
+                
+                VStack {
+                    
+                    Link(destination: postLink) {
+                        
+                        Text(AppStringValue.productSeeOriginalPostButtonText.uppercased())
+                            .font(.body)
+                            .fontWeight(.light)
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, 10)
+                            .background(
+                                RoundedRectangle(cornerRadius: 5)
+                                    .fill(
+                                        Color.starRatingTintColor
+                                    )
+                            )
+                        
+                    } //: Link
+                    
+                } //: VStack
+                .padding(.vertical, 10)
+                
+            } //: If
             
         } //: VStack
         .padding(.horizontal, 20)

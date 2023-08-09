@@ -24,12 +24,7 @@ struct PagingView: View {
                     .foregroundColor(.primary)
                     .fontWeight(.light)
                 
-                Spacer()
-                
-                Text("\(pagingData.primaryResults)")
-                    .font(.caption)
-                    .foregroundColor(.primary)
-                    .fontWeight(.light)
+                Spacer()                
                 
             } //: HStack
             .frame(height: 30)

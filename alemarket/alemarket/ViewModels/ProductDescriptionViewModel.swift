@@ -1,16 +1,16 @@
 //
-//  ProductDetailViewModel.swift
+//  ProductDescriptionViewModel.swift
 //  alemarket
 //
-//  Created by Alejandro Aliaga on 8/6/23.
+//  Created by Alejandro Aliaga on 8/9/23.
 //
 
 import SwiftUI
 
 @MainActor
-class ProductDetailViewModel: ObservableObject {
+class ProductDescriptionViewModel: ObservableObject {
     // MARK: - Properties
-    @Published var result: ApiResult<ProductModel>?    
+    @Published var result: ApiResult<ProductDescriptionModel>?
     @Published var loading: Bool = false
     private let productService: ProductServiceProvider
     
@@ -20,10 +20,10 @@ class ProductDetailViewModel: ObservableObject {
     }
  
     // MARK: - Public Functions
-    func productDetail(id: String) async {
+    func productDescription(id: String) async {
         self.loading = true
         defer { self.loading = false }
         
-        self.result = await productService.productDetailById(with: id)
+        self.result = await productService.productDescriptionById(with: id)
     }
 }

@@ -79,6 +79,11 @@
 		F3F4E3082A83105C00D75371 /* BestSellerTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4E3072A83105C00D75371 /* BestSellerTextView.swift */; };
 		F3F4E30A2A83168C00D75371 /* ThumbnailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4E3092A83168C00D75371 /* ThumbnailImageView.swift */; };
 		F3F4E30C2A8318E800D75371 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4E30B2A8318E800D75371 /* Font+Extension.swift */; };
+		F3F4E30E2A832D6C00D75371 /* ProductAttributesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4E30D2A832D6C00D75371 /* ProductAttributesView.swift */; };
+		F3F4E3102A833C5700D75371 /* ProductDescriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4E30F2A833C5700D75371 /* ProductDescriptionModel.swift */; };
+		F3F4E3122A833F9200D75371 /* ProductDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4E3112A833F9200D75371 /* ProductDescriptionViewModel.swift */; };
+		F3F4E3142A833FC200D75371 /* ProductDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4E3132A833FC200D75371 /* ProductDescriptionView.swift */; };
+		F3F4E3162A83468500D75371 /* ProductSellerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4E3152A83468500D75371 /* ProductSellerInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +180,11 @@
 		F3F4E3072A83105C00D75371 /* BestSellerTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSellerTextView.swift; sourceTree = "<group>"; };
 		F3F4E3092A83168C00D75371 /* ThumbnailImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailImageView.swift; sourceTree = "<group>"; };
 		F3F4E30B2A8318E800D75371 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		F3F4E30D2A832D6C00D75371 /* ProductAttributesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAttributesView.swift; sourceTree = "<group>"; };
+		F3F4E30F2A833C5700D75371 /* ProductDescriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionModel.swift; sourceTree = "<group>"; };
+		F3F4E3112A833F9200D75371 /* ProductDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionViewModel.swift; sourceTree = "<group>"; };
+		F3F4E3132A833FC200D75371 /* ProductDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionView.swift; sourceTree = "<group>"; };
+		F3F4E3152A83468500D75371 /* ProductSellerInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSellerInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +348,7 @@
 			children = (
 				F307AE1A2A7F1D0500A198CC /* ProductListViewModel.swift */,
 				F3F4E2EF2A8090C900D75371 /* ProductDetailViewModel.swift */,
+				F3F4E3112A833F9200D75371 /* ProductDescriptionViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -428,6 +439,7 @@
 				F307ADE32A7EAB4200A198CC /* PeriodMetricsModel.swift */,
 				F3F4E2F32A80A59000D75371 /* PictureModel.swift */,
 				F32976722A7C766300647218 /* ProductModel.swift */,
+				F3F4E30F2A833C5700D75371 /* ProductDescriptionModel.swift */,
 				F307ADDF2A7EAB1700A198CC /* RatingsModel.swift */,
 				F307ADC72A7DBD7B00A198CC /* SearchResultModel.swift */,
 				F307ADF12A7EBB1600A198CC /* SalesModel.swift */,
@@ -471,7 +483,10 @@
 			isa = PBXGroup;
 			children = (
 				F3F4E2F52A81071F00D75371 /* ImageCarrouselView.swift */,
+				F3F4E30D2A832D6C00D75371 /* ProductAttributesView.swift */,
+				F3F4E3132A833FC200D75371 /* ProductDescriptionView.swift */,
 				F3F4E2F72A810D4600D75371 /* ProductDetailDataView.swift */,
+				F3F4E3152A83468500D75371 /* ProductSellerInfoView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -616,6 +631,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F4E3162A83468500D75371 /* ProductSellerInfoView.swift in Sources */,
 				F307ADCC2A7DBE2A00A198CC /* InstallmentsModel.swift in Sources */,
 				F329765A2A79EF1000647218 /* Color+Extension.swift in Sources */,
 				F307AE062A7F05B000A198CC /* ApiResult.swift in Sources */,
@@ -631,11 +647,13 @@
 				F307AE202A7FCFDB00A198CC /* SearchView.swift in Sources */,
 				F32976692A7C631F00647218 /* URLSession+Extension.swift in Sources */,
 				F3F4E2EC2A80883F00D75371 /* ProductDetailView.swift in Sources */,
+				F3F4E3142A833FC200D75371 /* ProductDescriptionView.swift in Sources */,
 				F307AE1B2A7F1D0500A198CC /* ProductListViewModel.swift in Sources */,
 				F3F4E3082A83105C00D75371 /* BestSellerTextView.swift in Sources */,
 				F3F4E2F22A8096BD00D75371 /* ResultErrorView.swift in Sources */,
 				F32976582A79DF0500647218 /* URL+Extension.swift in Sources */,
 				F307ADCA2A7DBD9300A198CC /* PagingModel.swift in Sources */,
+				F3F4E3102A833C5700D75371 /* ProductDescriptionModel.swift in Sources */,
 				F3F4E2F02A8090C900D75371 /* ProductDetailViewModel.swift in Sources */,
 				F3F4E30A2A83168C00D75371 /* ThumbnailImageView.swift in Sources */,
 				F3F4E3062A826A6B00D75371 /* ConditionTextView.swift in Sources */,
@@ -646,6 +664,7 @@
 				F32976732A7C766300647218 /* ProductModel.swift in Sources */,
 				F307AE232A7FD10300A198CC /* AppStringValue.swift in Sources */,
 				F307ADE42A7EAB4200A198CC /* PeriodMetricsModel.swift in Sources */,
+				F3F4E3122A833F9200D75371 /* ProductDescriptionViewModel.swift in Sources */,
 				F3F4E2EE2A80905200D75371 /* NetworkError.swift in Sources */,
 				F307ADC62A7DBB9C00A198CC /* ShippingModel.swift in Sources */,
 				F3F4E2F82A810D4600D75371 /* ProductDetailDataView.swift in Sources */,
@@ -669,6 +688,7 @@
 				F3F4E2E42A80480300D75371 /* EmptyResultView.swift in Sources */,
 				F307ADCE2A7DBE5800A198CC /* VariationDataModel.swift in Sources */,
 				F307ADF62A7EE45400A198CC /* EshopModel.swift in Sources */,
+				F3F4E30E2A832D6C00D75371 /* ProductAttributesView.swift in Sources */,
 				F307ADD02A7DBE7000A198CC /* AttributeModel.swift in Sources */,
 				F3F4E30C2A8318E800D75371 /* Font+Extension.swift in Sources */,
 				F32976272A79D9F200647218 /* alemarketApp.swift in Sources */,

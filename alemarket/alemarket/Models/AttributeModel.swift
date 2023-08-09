@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AttributeModel: Codable {
+struct AttributeModel: Identifiable, Codable {
     let id: String
     let name: String
     let valueId: String?

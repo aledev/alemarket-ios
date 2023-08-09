@@ -22,6 +22,10 @@ extension Color {
         Color("MeliBackgroundColor")
     }
     
+    static var meliBrownColor: Color {
+        Color("MeliBrownColor")
+    }
+    
     static var meliGreenColor: Color {
         Color("MeliGreenColor")
     }

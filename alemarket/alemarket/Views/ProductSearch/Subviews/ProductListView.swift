@@ -15,7 +15,7 @@ struct ProductListView: View {
     // MARK: - Body
     var body: some View {
             
-        VStack {
+        VStack(spacing: 0) {
             
             if let result = searchResult {
                 

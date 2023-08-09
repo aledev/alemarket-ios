@@ -152,6 +152,11 @@ extension ProductModel {
     var totalTransactions: Int {
         seller?.sellerReputation.transactions.total ?? 0
     }
+    
+    var postLink: URL? {
+        URL(string: permalink)
+    }
+    
 }
 
 // MARK: - Equatable Implementation

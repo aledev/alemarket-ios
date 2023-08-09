@@ -51,7 +51,7 @@ struct ProductDetailView: View {
                 
                 LoadingView()
                 
-            }
+            } //: If
             
         } //: ZStack
         .task {
@@ -63,7 +63,7 @@ struct ProductDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(title)
         .toolbarBackground(.visible, for: .navigationBar)
-        .toolbarBackground(Color.meliBackgroundColor, for: .navigationBar)
+        .toolbarBackground(Color.meliBackgroundColor, for: .navigationBar)        
         
     } //: Body
     

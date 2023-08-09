@@ -42,6 +42,7 @@ struct ProductSearchView: View {
                     
                     SearchView(
                         query: $query,
+                        region: viewModel.region,
                         onSearchSubmit: onSearchSubmit
                     )
                     .padding(.bottom, -8)

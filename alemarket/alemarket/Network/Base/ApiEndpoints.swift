@@ -10,6 +10,7 @@ import Foundation
 enum ApiEndpoints {
     case productList(String, String)
     case productDetail(String)
+    case productDescription(String)
     
     private var value: String {
         switch self {
@@ -21,6 +22,9 @@ enum ApiEndpoints {
             return "sites/\(siteId)/search?q=\(encodedQuery)"
         case .productDetail(let itemId):
             return "items/\(itemId)"
+            
+        case .productDescription(let itemId):
+            return "items/\(itemId)/description"
         }
     }
     

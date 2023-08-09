@@ -6,12 +6,10 @@
 //
 
 import SwiftUI
+import Combine
 
 @main
 struct alemarketApp: App {
-    // MARK: - Properties
-    
-    
     // MARK: - Body
     var body: some Scene {
         
