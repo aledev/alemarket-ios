@@ -11,12 +11,21 @@ import Foundation
 // MARK: - Static App Values
 class AppUtils {
         
+    // SiteId
     static let defaultRegionCode = "UY"
     static let siteIdArgentina = "MLA"
-    static let siteIdChile = "MLC"
     static let siteIdBrazil = "MLB"
+    static let siteIdBolivia = "MBO"
+    static let siteIdChile = "MLC"
+    static let siteIdColombia = "MCO"
+    static let siteIdEcuador = "MEC"
+    static let siteIdParaguay = "MPY"
+    static let siteIdPeru = "MPE"
     static let siteIdUruguay = "MLU"
+    
+    // Product Keys
     static let attributeConditionId = "ITEM_CONDITION"
+    static let bestSellerCandidate = "best_seller_candidate"
     
 }
 
@@ -39,10 +48,20 @@ extension AppUtils {
         switch region {
         case "AR":
             return siteIdArgentina
-        case "CL":
-            return siteIdChile
+        case "BO":
+            return siteIdBolivia
         case "BR":
             return siteIdBrazil
+        case "CL":
+            return siteIdChile
+        case "CO":
+            return siteIdColombia
+        case "EC":
+            return siteIdEcuador
+        case "PY":
+            return siteIdParaguay
+        case "PE":
+            return siteIdPeru
         default:
             return siteIdUruguay
         }

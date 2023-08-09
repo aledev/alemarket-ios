@@ -24,3 +24,5 @@
 /* ProductDetailView Strings */
 "PRODUCT_SOLD_QUANTITY_TEXT" = "sold";
 "PRODUCT_PERCENTAGE_DISCOUNT_TEXT" = "% OFF";
+"PRODUCT_FREE_SHIPPING" = "Free Shipping";
+"PRODUCT_BEST_SELLER_CANDIDATE" = "Best Seller";

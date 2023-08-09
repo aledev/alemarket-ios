@@ -32,10 +32,10 @@ struct ProductListView: View {
                                 
                                 ProductListItemView(item: item)
                                 
-                            } //: NavigationLink                            
+                            } //: NavigationLink
                             
                         } //: List
-                        .listStyle(.inset)
+                        .listStyle(.plain)
                         
                     } else {
                         

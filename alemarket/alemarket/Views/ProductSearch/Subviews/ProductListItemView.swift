@@ -14,31 +14,26 @@ struct ProductListItemView: View {
     // MARK: - Body
     var body: some View {
         
-        HStack(alignment: .center, spacing: 15) {
+        HStack(alignment: .top, spacing: 15) {
             
-            AsyncImage(url: item.thumbnailUrl) { image in
+            // Thumbnail Image
+            VStack {
                 
-                if let image = image.image {
-                    
-                    image
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 100, height: 100)
-                        .cornerRadius(5)
-                    
-                } else {
-                    
-                    ImagePlaceholderView(
-                        width: 100,
-                        height: 100
-                    )
-                    
-                } //: If-Else
+                ThumbnailImageView(imageUrl: item.thumbnailUrl)
                 
-            } //: AsyncImage
+            } //: VStack
             
+            // Item Description
             VStack(alignment: .leading, spacing: 5) {
                 
+                // Best Seller
+                if let bestSeller = item.bestSeller {
+                    
+                    BestSellerTextView(text: bestSeller)
+                                        
+                }
+                
+                // Title
                 Text(item.title)
                     .font(.footnote)
                     .foregroundColor(.primary)
@@ -46,6 +41,7 @@ struct ProductListItemView: View {
                     .multilineTextAlignment(.leading)
                     .lineLimit(2)
                 
+                // Price
                 HStack {
                     
                     Text(item.formattedPrice)
@@ -63,8 +59,19 @@ struct ProductListItemView: View {
                     
                 } //: HStack
                     
+                // Shipping
+                if let freeShipping = item.freeShipping {
+                    
+                    Text(freeShipping)
+                        .font(.caption)
+                        .fontWeight(.medium)
+                        .foregroundColor(.meliGreenColor)
+                    
+                }
+                
                 Spacer()
                 
+                // Condition
                 if let condition = item.formattedCondition {
                     
                     ConditionTextView(condition: condition)
@@ -73,6 +80,7 @@ struct ProductListItemView: View {
                 
                 Spacer()
                 
+                // Rating
                 if let rating = item.starRating {
                     
                     HStack {
@@ -92,9 +100,10 @@ struct ProductListItemView: View {
                 } //: If
                 
             } //: VStack
+            .frame(alignment: .top)
             
         } //: HStack
-        
+        .frame(minHeight: 100, maxHeight: 150)
         
     } //: Body
     

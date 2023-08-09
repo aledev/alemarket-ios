@@ -42,7 +42,7 @@ extension SearchResultModel {
             countryDefaultTimeZone: "countryDefaultTimeZone123",
             query: "query123",
             paging: PagingModel.default,
-            results: [ProductModel.default]
+            results: [ProductModel.default, ProductModel.defaultWithPictures]
         )
     }
     

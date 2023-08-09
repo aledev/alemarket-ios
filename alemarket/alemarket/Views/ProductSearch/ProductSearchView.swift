@@ -34,7 +34,7 @@ struct ProductSearchView: View {
     // MARK: - Body
     var body: some View {
         
-        NavigationView {
+        NavigationStack {
         
             ZStack {
                 
@@ -59,7 +59,7 @@ struct ProductSearchView: View {
             } //: ZStack
             .background(Color.systemBackgroundColor)
                         
-        } //: NavigationView
+        } //: NavigationStack
         
     } //: Body
     
@@ -76,7 +76,7 @@ struct ProductSearchView_Previews: PreviewProvider {
             .previewDisplayName("Light Theme")
         
         // Dark Theme
-        ProductSearchView()            
+        ProductSearchView()
             .preferredColorScheme(.dark)
             .previewDisplayName("Dark Theme")
         

@@ -23,4 +23,6 @@ struct AppStringValue {
     static let pagingResultsText = NSLocalizedString("PAGING_RESULTS_TEXT", comment: "Text that appears on the right side of the number of results found")
     static let productSoldQuantityText = NSLocalizedString("PRODUCT_SOLD_QUANTITY_TEXT", comment: "Text that appear on the right side of the sold quantity on the product detail view")
     static let percentageDiscountText = NSLocalizedString("PRODUCT_PERCENTAGE_DISCOUNT_TEXT", comment: "Text that appear on the right side of the discount over the product original price")
+    static let productFreeShipping = NSLocalizedString("PRODUCT_FREE_SHIPPING", comment: "Free Shipping Text")
+    static let productBestSellerCandidate = NSLocalizedString("PRODUCT_BEST_SELLER_CANDIDATE", comment: "Product Best Seller Text")
 }

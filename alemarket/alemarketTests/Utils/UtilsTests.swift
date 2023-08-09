@@ -27,6 +27,14 @@ final class UtilsTests: XCTestCase {
         XCTAssertEqual(actual, expected)
     }
     
+    func testCurrentSiteIdForBolivia() throws {
+        let region = "BO"
+        let expected = AppUtils.siteIdBolivia
+        let actual = AppUtils.currentSiteIdFor(region: region)
+        
+        XCTAssertEqual(actual, expected)
+    }
+    
     func testCurrentSiteIdForBrazil() throws {
         let region = "BR"
         let expected = AppUtils.siteIdBrazil
@@ -38,6 +46,38 @@ final class UtilsTests: XCTestCase {
     func testCurrentSiteIdForChile() throws {
         let region = "CL"
         let expected = AppUtils.siteIdChile
+        let actual = AppUtils.currentSiteIdFor(region: region)
+        
+        XCTAssertEqual(actual, expected)
+    }
+    
+    func testCurrentSiteIdForColombia() throws {
+        let region = "CO"
+        let expected = AppUtils.siteIdColombia
+        let actual = AppUtils.currentSiteIdFor(region: region)
+        
+        XCTAssertEqual(actual, expected)
+    }
+    
+    func testCurrentSiteIdForEcuador() throws {
+        let region = "EC"
+        let expected = AppUtils.siteIdEcuador
+        let actual = AppUtils.currentSiteIdFor(region: region)
+        
+        XCTAssertEqual(actual, expected)
+    }
+    
+    func testCurrentSiteIdForParaguay() throws {
+        let region = "PY"
+        let expected = AppUtils.siteIdParaguay
+        let actual = AppUtils.currentSiteIdFor(region: region)
+        
+        XCTAssertEqual(actual, expected)
+    }
+    
+    func testCurrentSiteIdForPeru() throws {
+        let region = "PE"
+        let expected = AppUtils.siteIdPeru
         let actual = AppUtils.currentSiteIdFor(region: region)
         
         XCTAssertEqual(actual, expected)

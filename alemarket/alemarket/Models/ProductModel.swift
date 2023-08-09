@@ -122,13 +122,22 @@ extension ProductModel {
         }
         
         let discount = Int(round((100.0 - (price / originalPrice * 100.0))))
-        return "\(discount)\(AppStringValue.percentageDiscountText)"
+                        
+        return discount > 0 ? "\(discount)\(AppStringValue.percentageDiscountText)" : nil
     }
     
     var formattedCondition: String? {
         attributes.first(where: {
             $0.id == AppUtils.attributeConditionId
         })?.valueName
+    }
+    
+    var freeShipping: String? {
+        shipping.freeShipping ? AppStringValue.productFreeShipping : nil
+    }
+    
+    var bestSeller: String? {
+        tags.contains(where: { $0 == AppUtils.bestSellerCandidate }) ? AppStringValue.productBestSellerCandidate : nil
     }
     
     var starRating: Int? {

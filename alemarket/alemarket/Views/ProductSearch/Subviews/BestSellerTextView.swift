@@ -1,5 +1,5 @@
 //
-//  ConditionTextView.swift
+//  BestSellerTextView.swift
 //  alemarket
 //
 //  Created by Alejandro Aliaga on 8/8/23.
@@ -7,22 +7,22 @@
 
 import SwiftUI
 
-struct ConditionTextView: View {
+struct BestSellerTextView: View {
     // MARK: - Properties
-    let condition: String
+    let text: String
     
     // MARK: - Body
     var body: some View {
         
-        Text(condition)
-            .font(.caption2)
-            .foregroundColor(.secondary)
-            .fontWeight(.light)
+        Text(text.uppercased())
+            .font(.caption3)
+            .foregroundColor(.white)
+            .fontWeight(.medium)
             .padding(.all, 2)
             .background(
                 RoundedRectangle(cornerRadius: 2)
-                    .fill(Color.secondarySystemBackgroundColor)
-                    .shadow(color: Color.secondary, radius: 1)                    
+                    .fill(Color.meliOrangeColor)
+                    .shadow(color: Color.secondary, radius: 1)
             )
         
     } //: Body
@@ -30,19 +30,19 @@ struct ConditionTextView: View {
 }
 
 // MARK: - Previews
-struct ConditionTextView_Previews: PreviewProvider {
+struct BestSellerTextView_Previews: PreviewProvider {
     // Dummy data for the previews
-    private static let condition = "Nuevo"
+    private static let text = "Más Vendido"
     
     static var previews: some View {
         
         // Light Theme
-        ConditionTextView(condition: condition)
+        BestSellerTextView(text: text)
             .preferredColorScheme(.light)
             .previewDisplayName("Light Theme")
         
         // Dark Theme
-        ConditionTextView(condition: condition)
+        BestSellerTextView(text: text)
             .preferredColorScheme(.dark)
             .previewDisplayName("Dark Theme")
         

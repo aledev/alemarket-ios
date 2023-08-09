@@ -14,16 +14,20 @@ extension Color {
         Color("LoadingAccentColor")
     }
     
+    static var errorColor: Color {
+        Color("ErrorColor")
+    }
+        
     static var meliBackgroundColor: Color {
         Color("MeliBackgroundColor")
     }
     
-    static var errorColor: Color {
-        Color("ErrorColor")
-    }
-    
     static var meliGreenColor: Color {
         Color("MeliGreenColor")
+    }
+    
+    static var meliOrangeColor: Color {
+        Color("MeliOrangeColor")
     }
     
     static var starRatingTintColor: Color {
